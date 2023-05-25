@@ -14,16 +14,13 @@
 
 </head>
 
-<body class="body">
-    <!--HEADER-->
-    <header class="container-fluid p-0">
-        <!--NAVBAR-->
-        <nav class="navbar navbar-expand-md p-0" id="navBarPrincipal">
-            <div class="container-fluid d-flex">
+<body class="body d-flex">
+    
 
-                <a class="navbar-brand" href="#">
-                    <img src="assets/logo/logoSS.png" alt="logoSoundStream" width="120" height="90">
-                </a>
+    <main class="container-fluid p-0">
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-md p-0 sticky-top" id="navBarPrincipal">
+            <div class="container-fluid d-flex">
 
                 <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -44,12 +41,9 @@
             </div>
         </nav>
         <!--FIN NAVBAR-->
-    </header>
-    <!--FIN HEADER-->
 
-    <main class="container-fluid p-0 d-flex">
         <!--SECCION PRINCIPAL-->
-        <section class="container-fluid col-10">
+        <section class="container-fluid col-10 m-0 w-100">
             <!--SECCION TITULO-->
             <article class="seccionTitulo container my-5 d-flex flex-column">
                 <h1 class="text-white display-1 font-weight-bold" id="tituloPrincipal">SoundStream</h1>
@@ -235,30 +229,9 @@
             <!--FIN SECCION COMENTARIOS-->
         </section>
 
-        <!--INICIO ASIDE-->
-        <aside class="container-fluid col-2 aside">
-            <div class="container p-4 pt-4">
-                <div class="d-flex justify-content-between">
-                    <a class="linkAside" id="botonInicio">Inicio</a>
-                    <i class="bi bi-house"></i>
-                </div>
-                <div class="d-flex justify-content-between my-3">
-                    <a href="#" class="linkAside">Busqueda</a>
-                    <i class="bi bi-search"></i>
-                </div>
-                <div class="d-flex justify-content-between my-3">
-                    <a href="#" class="linkAside">Favoritos</a>
-                    <i class="bi bi-star"></i>
-                </div>
-            </div>
-        </aside>
-        <!--FIN ASIDE-->
-
-    </main>
-    <!--FIN MAIN-->
-
+        
     <!--INICIO FOOTER-->
-    <footer class="pie-pagina">
+    <footer class="pie-pagina container-fluid m-0 col-10">
 
         <!-- Fila 1 -->
         <div class="grupo-1">
@@ -279,12 +252,10 @@
                 <div class="box-2">
                 <h2>Nuestra Compañia</h2>
                     <div class="empresa">
-                        <a class="links-empresa" href="../Error/index.html">Sobre Nosotros</a><br>
-                        <a class="links-empresa" href="../Error/index.html">Administración</a><br>
-                        <a class="links-empresa" href="../Error/index.html">Precios y Planes</a><br>
-                        <a class="links-empresa" href="../Error/index.html">Transferencia de Música</a><br>
-                        <a class="links-empresa" href="../Error/index.html">Soporte</a><br>
-                        <a class="links-empresa" href="../Error/index.html">Empleo</a>
+                        <a class="linksFooter" href="../Error/index.html">Sobre Nosotros</a><br>
+                        <a class="linksFooter" href="../Error/index.html">Soporte</a><br>
+                        <a class="linksFooter" href="../Privacion/index.html"> Privación y Política</a>
+                        <a class="linksFooter" href="../Terminos/Condiciones/index.html">Términos y Condiciones</a>
                     </div>
                 </div>
             </div>
@@ -306,25 +277,47 @@
                 <div class="box-4">
                 <h2>Síguenos</h2>
                 <div class="red-social">
-                    <a href="https://es-la.facebook.com/"><i class="bi bi-facebook"></i></a>
-                    <a href="https://twitter.com/?lang=es"><i class="bi bi-twitter"></i></a>
-                    <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
-                    <a href="https://github.com/"><i class="bi bi-github"></i></a>
-                    <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+                    <a href="https://es-la.facebook.com/"><i class="bi bi-facebook redes-sociales"></i></a>
+                    <a href="https://www.instagram.com/"><i class="bi bi-instagram redes-sociales"></i></a>
+                    <a href="https://github.com/"><i class="bi bi-github redes-sociales"></i></a>
                 </div> 
                 </div>
             </div>
         </div>
-        <hr>
+            <hr>
 
         <!-- Fila 2 -->
-        <div class="grupo-2">
-            <div class="copyright"><div>&copy; 2023 <b>Grupo-1, <a class="rolling" href="https://rollingcodeschool.com/">Rolling Code</a> - Todos los Derechos Reservados.</b></div></div>
-            <div><a class="privacion" href="../Privacion/index.html"> Privación y Política</a> | <a class="terminos" href="../Terminos/Condiciones/index.html">Términos y Condiciones</a></div>
-        </div>
-    </footer>
+            <div class="grupo-2">
+                <div class="copyright"><div>&copy; 2023 <b>Grupo-1, <a class="rolling" href="https://rollingcodeschool.com/">Rolling Code</a> - Todos los Derechos Reservados.</b></div></div>
+            </div>
+        </footer>
+        <!--FIN FOOTER-->
 
-    <!--FIN FOOTER-->
+    </main>
+    <!--FIN MAIN-->
+
+    <!--INICIO ASIDE-->
+    <aside class="container-fluid col-2 aside">
+        <div class="container px-4">
+            <a class="d-flex justify-content-center pt-2" href="#">
+                <img src="assets/logo/logoSS.png" alt="logoSoundStream" width="100" height="70">
+            </a>
+
+            <div class="d-flex justify-content-between">
+                <a class="linkAside" id="botonInicio">Inicio</a>
+                <i class="bi bi-house"></i>
+            </div>
+            <div class="d-flex justify-content-between my-3">
+                <a href="#" class="linkAside">Busqueda</a>
+                <i class="bi bi-search"></i>
+            </div>
+            <div class="d-flex justify-content-between my-3">
+                <a href="#" class="linkAside">Favoritos</a>
+                <i class="bi bi-star"></i>
+            </div>
+        </div>
+    </aside>
+    <!--FIN ASIDE-->
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>

@@ -263,8 +263,9 @@ html {
     text-decoration: none;
 }
 
-.pie-pagina .grupo-1 .box .links-empresa:hover{
+.linksFooter:hover{
     color: aqua;
+    text-decoration: none;
 }
 
 .pie-pagina .grupo-1 .box p{
@@ -283,7 +284,7 @@ html {
     color:darkcyan;
 }
 
-.pie-pagina .grupo-1 .box .red-social a:hover{
+.redes-sociales:hover{
     color: aqua;
 }
 
