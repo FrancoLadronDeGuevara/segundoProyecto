@@ -204,13 +204,6 @@ button:hover:before {
     }
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:cursive;
-}
-
 .pie-pagina{
     width: 100%;
     background-color: rgb(44, 41, 41);
