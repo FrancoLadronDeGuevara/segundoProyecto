@@ -53,6 +53,10 @@ button:hover:before {
     color: white;
 } */
 
+html {
+    scroll-behavior: smooth;
+}
+
 *{
     color:white;
 }
