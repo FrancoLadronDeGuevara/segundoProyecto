@@ -10,17 +10,20 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 </head>
 
 <body class="body d-flex">
-    
-
-    <main class="container-fluid p-0">
+    <!--SECCION IZQUIERDA-->
+    <section class="container-fluid p-0">
         <!--NAVBAR-->
-        <nav class="navbar navbar-expand-md p-0 sticky-top" id="navBarPrincipal">
+        <nav class="navbar navbar-expand-md px-0 sticky-top" id="navBarPrincipal">
             <div class="container-fluid d-flex">
+
+                <a class="d-flex justify-content-center pt-2" href="#">
+                    <img src="assets/logo/logoSS.png" alt="logoSoundStream" width="100" height="80">
+                </a>
 
                 <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -31,10 +34,10 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item mx-3 my-3">
-                            <a class="nav-link btn btn-outline-light" href="#">Panel Admin</a>
+                            <a href="#"><i class="bi bi-arrow-left"></i></a>
                         </li>
                         <li class="nav-item mx-3 my-3">
-                            <a class="nav-link btn btn-outline-light" href="#">Iniciar Sesión</a>
+                            <a href="#"><i class="bi bi-arrow-right"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -42,111 +45,18 @@
         </nav>
         <!--FIN NAVBAR-->
 
+        
+
         <!--SECCION PRINCIPAL-->
-        <section class="container-fluid col-10 m-0 w-100">
-            <!--SECCION TITULO-->
-            <article class="seccionTitulo container my-5 d-flex flex-column">
+        <section class="container-fluid col-12 seccionPrincipal">
+            <!--SECCION PRINCIPAL TITULO-->
+            <article class="seccionTitulo container d-flex flex-column">
                 <h1 class="text-white display-1 font-weight-bold" id="tituloPrincipal">SoundStream</h1>
-                <h2 class="text-white eslogan">Tu música, en todas partes</h2>
-                <a href="#" class="btn btn-light w-25 botonRegistro">Registrarse ahora</a>
+                <h2 class="text-white display-3 eslogan">es <span class="animacionTextoSoundStream"></span><span class="cursorAnimacionTexto"> </span></h2>
             </article>
-            <!--FIN SECCION TITULO-->
+            <!--FIN SECCION PRINCIPAL TITULO-->
 
-            <!--SECCION FAVORITOS-->
-            <article class="seccionFavoritos container my-5">
-                <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <h2 class="text-white text-center">Lo más escuchado hoy!</h2>
-                        <div class="carousel-item active" data-bs-interval="5000">
-                            <div class="row text-center">
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <div class="row text-center">
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <div class="row text-center">
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <!--FIN SECCION FAVORITOS-->
-
-            <!--SECCION INFORMACION-->
+            <!--SECCION PRINCIPAL INFORMACION-->
             <article class="seccionInfo container p-0 d-flex justify-content-between my-5">
                 <div class="card" style="width: 20rem;">
                     <img src="assets/logo/escuchandomusica.jpeg" class="card-img-top h-100" alt="...">
@@ -175,9 +85,9 @@
                     <span class="bgCard"></span>
                 </div>
             </article>
-            <!--FIN SECCION INFORMACION-->
+            <!--FIN SECCION PRINCIPAL INFORMACION-->
 
-            <!--SECCION CALIDAD DE SONIDO-->
+            <!--SECCION PRINCIPAL CALIDAD DE SONIDO-->
             <article class="seccionSonido container d-flex align-items-center justify-content-between p-3 my-5">
                 <div>
                     <h4>Descubre formatos de audio innovadores</h4>
@@ -190,14 +100,14 @@
                     <img src="assets/logo/reality.png" class="img-fluid logoSonido" width="100" height="70" alt="">
                 </div>
             </article>
-            <!--FIN SECCION CALIDAD DE SONIDO-->
+            <!--FIN SECCION PRINCIPAL CALIDAD DE SONIDO-->
 
-            <!--SECCION COMENTARIOS-->
-            <article class="seccionComentarios container">
+            <!--SECCION PRINCIPAL COMENTARIOS-->
+            <article class="seccionComentarios container my-5">
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner p-5">
                         <div class="carousel-item active" data-bs-interval="5000">
-                            <h2 class="display-4 mb-5 font-weight-bold">"Estamos frente a una de las mejores plataformas
+                            <h2 class="display-4 mb-5">"Estamos frente a una de las mejores plataformas
                                 de streaming de música en la actualidad.-"
                             </h2>
                             <p><i>-Satya Nadella (CEO de Microsoft)</i></p>
@@ -226,82 +136,418 @@
                     </div>
                 </div>
             </article>
-            <!--FIN SECCION COMENTARIOS-->
+            <!--FIN SECCION PRINCIPAL COMENTARIOS-->
         </section>
 
-        
-    <!--INICIO FOOTER-->
-    <footer class="pie-pagina container-fluid m-0 col-10">
-
-        <!-- Fila 1 -->
-        <div class="grupo-1">
-
-            <!-- Box 1 -->
-            <div class="box">
-                <div class="box-1">
-                    <figure>
-                        <a href="#">
-                            <img src="./assets/logo/logoSS.png" alt="Logo de página">
-                        </a>
-                    </figure>
-                </div>
-            </div>
-
-            <!-- Box 2 -->
-            <div class="box">
-                <div class="box-2">
-                <h2>Nuestra Compañia</h2>
-                    <div class="empresa">
-                        <a class="linksFooter" href="../Error/index.html">Sobre Nosotros</a><br>
-                        <a class="linksFooter" href="../Error/index.html">Soporte</a><br>
-                        <a class="linksFooter" href="../Privacion/index.html"> Privación y Política</a>
-                        <a class="linksFooter" href="../Terminos/Condiciones/index.html">Términos y Condiciones</a>
+        <!--SECCION FAVORITOS-->
+        <section class="seccionFavoritos d-none container my-5">
+            <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <h2 class="text-white text-center">Lo más escuchado hoy!</h2>
+                    <!--FILA 1 FAVORITOS-->
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <div class="row text-center">
+                            <div class="col-4 col-md">
+                                <div class="div-carousel">
+                                    <a href="#">
+                                        <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
+                                            alt="album">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md">
+                                <div class="div-carousel">
+                                    <a href="#">
+                                        <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
+                                            alt="album">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md">
+                                <div class="div-carousel">
+                                    <a href="#">
+                                        <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
+                                            alt="album">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--FILA 2 FAVORITOS-->
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <div class="row text-center">
+                            <div class="col-4 col-md">
+                                <div class="div-carousel">
+                                    <a href="#">
+                                        <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
+                                            alt="album">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md">
+                                <div class="div-carousel">
+                                    <a href="#">
+                                        <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
+                                            alt="album">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md">
+                                <div class="div-carousel">
+                                    <a href="#">
+                                        <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
+                                            alt="album">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--FILA 3 FAVORITOS-->
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <div class="row text-center">
+                            <div class="col-4 col-md">
+                                <div class="div-carousel">
+                                    <a href="#">
+                                        <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
+                                            alt="album">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md">
+                                <div class="div-carousel">
+                                    <a href="#">
+                                        <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
+                                            alt="album">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-4 col-md">
+                                <div class="div-carousel">
+                                    <a href="#">
+                                        <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
+                                            alt="album">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+        <!--FIN SECCION FAVORITOS-->
 
-            <!-- Box 3 -->
-            <div class="box">
-                <div class="box-3">
-                <h2>Nuestro Lugar</h2>
-                <p>Rolling Code</p>
-                <p>General Paz 576</p>
-                <p>Tucumán 4000</p>
-                <p>T: (381) 578 3030</p>
-                <p>rollingcode@gmail.com</p>
+        <section class="container col-12 col-md-10 d-none seccionPolitica">
+            <h1 class="text-center">Política de privacidad</h1>
+
+            <p>El sitio web <a href="../index.html">https://soundstream.netlify.app/</a> es propiedad de SoundStream, que es
+                un controlador de datos de tus
+                datos personales.
+            </p><br>
+            <p>Hemos adoptado esta Política de privacidad, que determina cómo procesamos la información recopilada por
+                <a href="../index.html">https://soundstream.netlify.app/</a>, que también proporciona las razones por las que
+                debemos recopilar ciertos datos
+                personales sobre ti. Por lo tanto, debes leer esta Política de privacidad antes de usar el sitio web de
+                <a href="../index.html">https://soundstream.netlify.app/</a>.
+            </p><br>
+
+            <p>Cuidamos tus datos personales y nos comprometemos a garantizar su confidencialidad y seguridad.</p><br>
+
+            <p><span class="fw-bold">Información personal que recopilamos:</span></p>
+
+            <p>Cuando visitas <a href="../index.html">https://soundstream.netlify.app/</a>, recopilamos automáticamente
+                cierta información sobre tu
+                dispositivo, incluida información sobre tu navegador web, dirección IP, zona horaria y algunas de las
+                cookies instaladas en tu dispositivo. Además, a medida que navegas, recopilamos información sobre las
+                páginas web individuales o los productos que ves, qué sitios web o términos de búsqueda te remitieron a
+                la
+                web y cómo interactúas. Nos referimos a esta información recopilada automáticamente como "Información
+                del
+                dispositivo". Además, podemos recopilar los datos personales que nos proporcionas (incluidos, entre
+                otros,
+                nombre, apellido, dirección, información de pago, etc.) durante el registro para poder cumplir con el
+                acuerdo.</p>
+
+            <p><span class="fw-bold">¿Por qué procesamos tus datos?</span></p>
+
+            <p>Nuestra máxima prioridad es la seguridad de los datos del cliente y, como tal, podemos procesar solo los
+                datos mínimos del usuario, solo en la medida en que sea absolutamente necesario para mantener el sitio
+                web.
+                La información recopilada automáticamente se utiliza solo para identificar casos potenciales de abuso y
+                establecer información estadística sobre el uso del sitio web. Esta información estadística no se agrega
+                de
+                tal manera que identifique a ningún usuario en particular del sistema.</p>
+
+            <p>Puedes visitar la web sin decirnos quién eres ni revelar ninguna información por la cual alguien pueda
+                identificarte como una persona específica. Sin embargo, si deseas utilizar algunas de las funciones del
+                sitio web, o deseas recibir nuestro boletín informativo o proporcionar otros detalles al completar un
+                formulario, puedes proporcionarnos datos personales, como tu correo electrónico, nombre, apellido,
+                ciudad de
+                residencia, organización y número de teléfono. Puedes optar por no proporcionar tus datos personales,
+                pero
+                es posible que no puedas aprovechar algunas de las funciones del sitio web. Por ejemplo, no podrás
+                recibir
+                nuestro boletín ni contactarnos directamente desde el sitio web. Los usuarios que no estén seguros de
+                qué
+                información es obligatoria pueden ponerse en contacto con nosotros a través de <span
+                    class="fw-bold">soundstream@gmail.com</span>.</p>
+
+            <p><span class="fw-bold">Tus derechos:</span></p>
+
+            <p>Si eres residente argentino, tienes los siguientes derechos relacionados con tus datos personales:</p>
+
+            <ul>
+                <li>El derecho a ser informado.
+                </li>
+                <li>El derecho de acceso.
+                </li>
+                <li>El derecho a la rectificación.
+                </li>
+                <li>El derecho a borrar.
+                </li>
+                <li>El derecho a restringir el procesamiento.
+                </li>
+                <li>El derecho a la portabilidad de datos.
+                </li>
+                <li>El derecho a oponerte.
+                </li>
+                <li>Derechos en relación con la toma de decisiones automatizada y la elaboración de perfiles.
+                </li>
+            </ul>
+
+            <p>Si deseas ejercer este derecho, comunícate con nosotros a través de la información de contacto a
+            continuación.</p>
+
+            <p>Además, si eres residente argentino, destacamos que estamos procesando tu información para cumplir con los
+            contratos que podríamos tener contigo (por ejemplo, si realizas un pedido a través de la web), o de otra
+            manera para seguir nuestros intereses comerciales legítimos enumerados anteriormente. Además, ten en cuenta
+            que tu información puede transferirse fuera de Argentina, incluidos Canadá y Estados Unidos.</p>
+
+            <p><span class="fw-bold">Enlaces a otros sitios web:</span></p>
+
+            <p>Nuestra web puede contener enlaces a otros sitios web que no son de nuestra propiedad ni están controlados
+            por nosotros. Ten en cuenta que no somos responsables de dichos sitios web ni de las prácticas de privacidad
+            de terceros. Te recomendamos que estés atento cuando abandones nuestro sitio web y leas las declaraciones de
+            privacidad de cada web que pueda recopilar información personal.</p>
+
+            <p><span class="fw-bold">Seguridad de la información:</span></p>
+
+            <p>Aseguramos la información que proporcionas en servidores informáticos en un entorno controlado y seguro,
+            protegido del acceso, uso o divulgación no autorizados. Mantenemos medidas de seguridad administrativas,
+            técnicas y físicas razonables para proteger contra el acceso no autorizado, el uso, la modificación y la
+            divulgación de datos personales bajo su control y custodia. Sin embargo, no se puede garantizar la
+            transmisión de datos a través de Internet o redes inalámbricas.</p>
+
+            <p><span class="fw-bold">Divulgación legal:</span></p>
+
+            <p>Divulgaremos cualquier información que recopilemos, usemos o recibamos si así lo requiere o lo permite la
+            ley, como para cumplir con una citación o un proceso legal similar, y cuando creemos de buena fe que la
+            divulgación es necesaria para proteger nuestros derechos, proteger tu seguridad o la seguridad de los demás,
+            investigar el fraude o responder a una solicitud del gobierno.</p>
+
+            <p><span class="fw-bold">Información de contacto:</span></p>
+
+            <p>Si deseas comunicarte con nosotros para comprender más sobre esta Política o deseas comunicarte con nosotros
+            en relación con cualquier asunto sobre los derechos individuales y tu información personal, puedes enviarnos
+            un correo electrónico a <span class="fw-bold">soundstream@gmail.com</span>.</p>
+        </section>
+
+        <section class="col-12 col-md-10 d-none seccionTerminos">
+
+            <h1 class="text-center">TÉRMINOS Y CONDICIONES — SoundStream</h1>
+
+            SoundStream, persona jurídica de derecho privado describe, a través de este documento, las normas de uso
+            del sitio <a href="../index.html">https://soundstream.netlify.app/</a> y de cualquier otro sitio web, tienda o
+            aplicación operada por el
+            titular.
+
+            Al navegar por este sitio web, consideramos que está de acuerdo con las condiciones de uso que figuran a
+            continuación.
+
+            Si no está de acuerdo con los términos de este acuerdo, le pedimos que no haga ningún otro uso de este sitio
+            web, mucho menos que se registre o envíe sus datos personales.
+
+            Si cambiamos nuestras condiciones de uso, publicaremos el nuevo texto en este sitio web, con una fecha de
+            revisión actualizada. Podemos modificar este documento en cualquier momento.
+
+            Si hay un cambio significativo en los términos de este acuerdo, podemos informarle utilizando la información
+            de contacto que tenemos en nuestra base de datos o mediante una notificación.
+
+            El uso de este sitio web después de los cambios significa que usted acepta las condiciones de uso revisadas.
+            Si, después de leer la versión revisada, no está de acuerdo con sus términos, por favor, termine su acceso.
+
+            <ul><br>
+                <li><span class="fw-bold">Sección 1 - Usuario</span><p>El uso de este sitio web le otorga
+                    automáticamente la condición de Usuario e implica
+                    su
+                    plena aceptación de todas las directrices y condiciones incluidas en estas Condiciones.</p></li>
+                <li><span class="fw-bold">Sección 2 - Adhesión junto con la política de privacidad</span><p>El uso de
+                    este sitio web implica la adhesión a
+                    estas
+                    Condiciones de Uso y a la versión más actualizada de la Política de Privacidad de SoundStream.</p></li>
+                <li><span class="fw-bold">Sección 3 - Condiciones de acceso</span><p>En general, el acceso al sitio web
+                    de SoundStream es gratuito y no
+                    requiere registro previo.Sin embargo, para hacer uso de algunas funcionalidades, el usuario puede
+                    necesitar
+                    registrarse, creando una cuenta de usuario con un nombre de usuario y una contraseña de acceso.Es
+                    responsabilidad del usuario proporcionar únicamente información correcta, auténtica, válida,
+                    completa y
+                    actualizada, así como no revelar su nombre de usuario y contraseña a terceros.Algunas partes de este
+                    sitio
+                    web ofrecen al usuario la opción de publicar comentarios en determinadas áreas.SoundStream no
+                    consiente
+                    la
+                    publicación de contenidos de carácter discriminatorio, ofensivo o ilícito, o que infrinjan los
+                    derechos
+                    de
+                    autor o cualquier otro derecho de terceros.La publicación de cualquier contenido por parte del
+                    usuario
+                    de
+                    este sitio web, incluidos los mensajes y comentarios, implica una licencia no exclusiva, irrevocable
+                    e
+                    irreversible para su uso, reproducción y publicación por parte de SoundStream en su sitio web,
+                    plataformas
+                    de internet y aplicaciones, o incluso en otras plataformas, sin ninguna restricción o limitación.</p>
+                </li>
+                <li><span class="fw-bold">Sección 4 - Cookies</span><p>La información sobre el uso que usted hace de
+                    este sitio web puede recogerse a través
+                    de
+                    las cookies. Las cookies son piezas de información que se almacenan directamente en el equipo que
+                    está
+                    utilizando. Las cookies permiten recoger información como el tipo de navegador, el tiempo de
+                    permanencia
+                    en
+                    el sitio web, las páginas visitadas, las preferencias de idioma y otros datos de tráfico anónimos.
+                    Nosotros
+                    y nuestros proveedores de servicios utilizamos la información para la protección de la seguridad,
+                    para
+                    facilitar la navegación, mostrar la información de manera más eficiente y personalizar su
+                    experiencia al
+                    utilizar este sitio web, así como para el seguimiento en línea. También recopilamos información
+                    estadística
+                    sobre el uso del sitio web para mejorar continuamente nuestro diseño y funcionalidad, para entender
+                    cómo
+                    se
+                    utiliza el sitio web y para ayudarle a resolver problemas relevantes.Si no desea que se recoja su
+                    información a través de las cookies, existe un procedimiento sencillo en la mayoría de los
+                    navegadores
+                    que
+                    permite rechazar automáticamente las cookies, o le da la opción de aceptar o rechazar la
+                    transferencia
+                    de
+                    una cookie específica (o varias) de un sitio web concreto a su ordenador. Sin embargo, esto puede
+                    crear
+                    inconvenientes en su uso del sitio web.La configuración que elija puede afectar a su experiencia de
+                    navegación y al funcionamiento que requiere el uso de cookies. En este sentido, rechazamos cualquier
+                    responsabilidad por las consecuencias derivadas del funcionamiento limitado de este sitio web
+                    causado
+                    por la
+                    desactivación de las cookies en su dispositivo (incapacidad para establecer o leer una cookie).</p></li>
+                <li><span class="fw-bold">Sección 5 - Propiedad intelectual</span><p>Todos los elementos de SoundStream
+                    son propiedad intelectual de la
+                    misma o
+                    de sus licenciantes. Estos términos o el uso del sitio web no le otorgan ninguna licencia o derecho
+                    de
+                    uso
+                    de los derechos de propiedad intelectual de SoundStream o de cualquier tercero.</p></li>
+                <li><span class="fw-bold">Sección 6 - Enlaces a sitios web de terceros</span><p>Este sitio web puede
+                    contener, de vez en cuando, enlaces de
+                    hipertexto que le redirigirán a sitios web de nuestros socios, anunciantes, proveedores, etc. Si
+                    hace
+                    clic
+                    en uno de estos enlaces a cualquiera de estos sitios, recuerde que cada sitio tiene sus propias
+                    prácticas de
+                    privacidad y que nosotros no somos responsables de estas políticas. Por favor, consulte esas
+                    políticas
+                    antes
+                    de enviar cualquier dato personal a esos sitios.No somos responsables de las políticas y prácticas
+                    de
+                    recopilación, uso y divulgación (incluidas las prácticas de protección de datos) de otras
+                    organizaciones,
+                    como Facebook, Apple, Google, Microsoft, o cualquier otro desarrollador de software o proveedor de
+                    aplicaciones, tienda de medios sociales, sistema operativo, proveedor de servicios de internet o
+                    fabricante
+                    de dispositivos, incluidos los Datos Personales que usted divulgue a otras organizaciones a través
+                    de
+                    las
+                    aplicaciones, en relación con dichas aplicaciones, o publicados en nuestras redes sociales. Le
+                    recomendamos
+                    que se informe sobre la política de privacidad y las condiciones de uso de cada sitio web visitado o
+                    proveedor de servicios utilizado.</p></li>
+                <li><span class="fw-bold">Sección 7 - Plazos y modificaciones</span><p>El funcionamiento de este sitio
+                    web es por tiempo indefinido.La
+                    totalidad
+                    del sitio web o cada una de sus secciones podrá ser cerrada, suspendida o interrumpida
+                    unilateralmente
+                    por
+                    SoundStream, en cualquier momento y sin previo aviso.</p></li>
+                <li><span class="fw-bold">Sección 8 - Datos personales</span><p>Durante el uso de este sitio web,
+                    ciertos datos personales serán recogidos y
+                    procesados por SoundStream y/o los Socios. Las normas relativas al tratamiento de los datos
+                    personales
+                    de
+                    SoundStream están estipuladas en la Política de Privacidad.</p></li>
+                <li><span class="fw-bold">Sección 9 - Contacto</span><p>Si tiene alguna pregunta sobre las condiciones
+                    de uso, por favor póngase en contacto
+                    con
+                    nosotros por correo electrónico <span class="fw-bold">soundstream@gmail.com</span>.</p></li>
+                </ul>
+        </section>
+
+        <!--INICIO FOOTER-->
+        <footer class="container col-12 pt-2 px-5">
+            <div class="container d-flex justify-content-between">
+                    <div class="logo">
+                            <a href="#">
+                                <img src="./assets/logo/logoSS.png" class="img-fluid" alt="Logo de página" width="150" height="130">
+                            </a>
+                    </div>
+
+                <div class="contacto">
+                        <h2>Contacto</h2>
+                        <div class="d-flex flex-column">
+                            <a class="linksFooter" href="">Sobre Nosotros</a>
+                            <a class="linksFooter" href="">Soporte</a>
+                            <a class="linksFooter" id="botonPolitica">Política de Privacidad</a>
+                            <a class="linksFooter" id="botonTerminos">Términos y Condiciones</a>
+                        </div>
                 </div>
-            </div>
 
-            <!-- Box 4 -->
-            <div class="box">
-                <div class="box-4">
-                <h2>Síguenos</h2>
-                <div class="red-social">
-                    <a href="https://es-la.facebook.com/"><i class="bi bi-facebook redes-sociales"></i></a>
-                    <a href="https://www.instagram.com/"><i class="bi bi-instagram redes-sociales"></i></a>
-                    <a href="https://github.com/"><i class="bi bi-github redes-sociales"></i></a>
-                </div> 
+                <div class="lugar">
+                        <h2>Nuestro Lugar</h2>
+                        <p class="m-0">General Paz 576</p>
+                        <p class="m-0">Tucumán 4000</p>
+                        <p class="m-0">T: (381) 578 3030</p>
+                        <p class="m-0">rollingcode@gmail.com</p>
                 </div>
-            </div>
-        </div>
-            <hr>
 
-        <!-- Fila 2 -->
-            <div class="grupo-2">
-                <div class="copyright"><div>&copy; 2023 <b>Grupo-1, <a class="rolling" href="https://rollingcodeschool.com/">Rolling Code</a> - Todos los Derechos Reservados.</b></div></div>
+                <div class="redes">
+                        <h2>Síguenos</h2>
+                        <div class="red-social">
+                            <a href="https://es-la.facebook.com/"><i class="bi bi-facebook redes-sociales"></i></a>
+                            <a href="https://www.instagram.com/"><i class="bi bi-instagram redes-sociales"></i></a>
+                            <a href="https://github.com/"><i class="bi bi-github redes-sociales"></i></a>
+                        </div>
+                </div>
+            </div> 
+
+            <hr class="border border-light">
+
+            <div class="container-fluid text-center">
+                    <div>&copy; 2023 <b>Grupo-1, <a class="rollingCodeLink" href="https://rollingcodeschool.com/">Rolling
+                        Code</a> - Todos los Derechos Reservados.</b>
+                    </div>
             </div>
         </footer>
         <!--FIN FOOTER-->
+    </section>
+    <!--FIN SECCION IZQUIERDA-->
 
-    </main>
-    <!--FIN MAIN-->
-
-    <!--INICIO ASIDE-->
+    <!--INICIO SECCION DERECHA-->
     <aside class="container-fluid col-2 aside">
-        <div class="container px-4">
-            <a class="d-flex justify-content-center pt-2" href="#">
-                <img src="assets/logo/logoSS.png" alt="logoSoundStream" width="100" height="70">
-            </a>
+        <div class="container px-4 pt-3">
+
+            <button class="btn btn-outline-light w-100">Registrarse</button>
+            <button class="btn btn-outline-light my-3 w-100">Iniciar sesión</button>
 
             <div class="d-flex justify-content-between">
                 <a class="linkAside" id="botonInicio">Inicio</a>
@@ -312,12 +558,16 @@
                 <i class="bi bi-search"></i>
             </div>
             <div class="d-flex justify-content-between my-3">
-                <a href="#" class="linkAside">Favoritos</a>
+                <a href="#" class="linkAside" id="botonFavoritos">Favoritos</a>
                 <i class="bi bi-star"></i>
+            </div>
+            <div class="d-flex justify-content-between my-3">
+                <a href="#" class="linkAside" id="botonLista">Crear lista de reproducción</a>
+                <i class="bi bi-plus-circle"></i>
             </div>
         </div>
     </aside>
-    <!--FIN ASIDE-->
+    <!--FIN SECCION DERECHA-->
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
