@@ -17,6 +17,7 @@ if (usuarioLogueado) {
     btnIniciarSesion.classList.add('d-none');
     btnRegistrarse.classList.add('d-none');
     btnCerrarSesion.classList.remove('d-none');
+    
 }
 //FUNCION DEL BOTON CERRAR SESION
 btnCerrarSesion.addEventListener('click', () => {
