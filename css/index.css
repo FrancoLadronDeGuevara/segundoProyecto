@@ -69,9 +69,9 @@ html {
 #navBarPrincipal{
     background-color: #09090A;
 }
-.transparencia{
-    opacity: .9;
-}
+/* #btnIniciarSesion, #btnRegistrarse{
+    display: none;
+} */
 /***************************/
 /*      FIN NAVBAR         */
 /***************************/
@@ -79,39 +79,10 @@ html {
 
 
 /***************************/
-/*      SECCION ASIDE      */
-/***************************/
-.aside{
-    height: 100vh;
-    background-color: #09090A;
-    position: sticky !important;
-    top: 0;
-}
-.linkAside{
-    color: white;
-    text-decoration: none;
-    font-weight: bolder;
-}
-.linkAside:hover{
-    color: white;
-    text-decoration: none;
-    animation: flash;
-    animation-duration: 1s;
-}#botonInicio:hover{
-    cursor: pointer;
-}
-/***************************/
-/*    FIN SECCION ASIDE    */
-/***************************/
-
-
-
-
-/***************************/
 /*    SECCION PRINCIPAL    */
 /***************************/
 .seccionPrincipal{
-    animation: fadeInUp;
+    animation: backInLeft;
     animation-duration: .5s;
 }
 .seccionTitulo{
@@ -183,8 +154,6 @@ html {
 /***************************/
 
 
-
-
 /***************************/
 /*       FAVORITOS         */
 /***************************/
@@ -200,6 +169,24 @@ html {
 /*      FIN FAVORITOS      */
 /***************************/
 
+
+/***************************/
+/*         ACORDEON        */
+/***************************/
+.accordion-button{
+    cursor: pointer;
+}
+.accordion-button:hover{
+    box-shadow: white 0px 0px 10px;
+}
+.accordion-body{
+    border: white 1px solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+/***************************/
+/*      FIN ACORDEON       */
+/***************************/
 
 
 

@@ -1,23 +1,61 @@
-//ANIMACION VOLVER ARRIBA BOTON INICIO
-let volverArriba = document.querySelector("#botonInicio");
-    
-volverArriba.addEventListener("click", function() {
-    window.scrollTo(0, 0)
+//VERIFICACION SI HAY UN USUARIO LOGUEADO O UN ADMIN LOGUEADO
+const btnAdmin = document.getElementById('btnAdmin');
+const btnIniciarSesion = document.getElementById('btnIniciarSesion');
+const btnRegistrarse = document.getElementById('btnRegistrarse');
+const btnCerrarSesion = document.getElementById('btnCerrarSesion');
+const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado')) || false;
+const adminLogueado = JSON.parse(localStorage.getItem('adminLogueado')) || false;
+
+if (adminLogueado) {
+    btnIniciarSesion.classList.add('d-none');
+    btnRegistrarse.classList.add('d-none');
+    btnAdmin.classList.remove('d-none');
+    btnCerrarSesion.classList.remove('d-none');
+}
+
+if (usuarioLogueado) {
+    btnIniciarSesion.classList.add('d-none');
+    btnRegistrarse.classList.add('d-none');
+    btnCerrarSesion.classList.remove('d-none');
+}
+//FUNCION DEL BOTON CERRAR SESION
+btnCerrarSesion.addEventListener('click', () => {
+    Swal.fire({
+        title: '¿Cerrar Sesión?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, cerrar sesión!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Cerrando sesión...',
+                toast: true,
+                position: 'top',
+                timer: 2000,
+                showConfirmButton: false
+            })
+            localStorage.removeItem('adminLogueado');
+            localStorage.removeItem('usuarioLogueado');
+            let interval = setInterval(() => {
+                window.location.href = '../index.html'
+            }, 2000)
+        }
+    })
 })
-//FIN ANIMACION VOLVER ARRIBA
 
-//ANIMACION SCROLL NAVBAR
-const transparenciaTopBar = document.querySelector("#navBarPrincipal");
 
-window.addEventListener("scroll", () => {
-    if(window.scrollY > 0){
-        transparenciaTopBar.classList.add("transparencia");
-    }else{
-        transparenciaTopBar.classList.remove("transparencia");
-    }
-})
 
-// let alturaTopBar = transparenciaTopBar.offsetHeight;
+
+
+
+
+
+
+
+
+
 
 //ANIMACION LETRAS TITULO SOUNDSTREAM
 const typedTextSpan = document.querySelector(".animacionTextoSoundStream");
@@ -56,47 +94,7 @@ function erase() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     if (textArray.length) setTimeout(type, newTextDelay + 250);
 });
 //FIN ANIMACION LETRAS TITULO SOUNDSTREAM
-
-//ANIMACION PESTAÑAS
-const seccionPrincipal = document.querySelector(".seccionPrincipal");
-const seccionFavoritos = document.querySelector(".seccionFavoritos");
-const seccionPolitica = document.querySelector(".seccionPolitica");
-const seccionTerminos = document.querySelector(".seccionTerminos");
-const botonInicio = document.getElementById("botonInicio");
-const botonFav = document.getElementById("botonFavoritos");
-const botonPolitica = document.getElementById("botonPolitica");
-const botonTerminos = document.getElementById("botonTerminos");
-
-botonInicio.addEventListener("click", ()=>{
-    seccionPrincipal.classList.remove("d-none");
-    seccionFavoritos.classList.add("d-none");
-    seccionPolitica.classList.add("d-none");
-    seccionTerminos.classList.add("d-none");
-})
-
-botonFav.addEventListener("click", ()=>{
-    seccionFavoritos.classList.remove("d-none");
-    seccionPrincipal.classList.add("d-none");
-    seccionPolitica.classList.add("d-none");
-    seccionTerminos.classList.add("d-none");
-})
-
-botonPolitica.addEventListener("click", ()=>{
-    seccionPolitica.classList.remove("d-none");
-    seccionPrincipal.classList.add("d-none");
-    seccionFavoritos.classList.add("d-none");
-    seccionTerminos.classList.add("d-none");
-    window.scrollTo(0, 0)
-})
-
-botonTerminos.addEventListener("click", ()=>{
-    seccionTerminos.classList.remove("d-none");
-    seccionPrincipal.classList.add("d-none");
-    seccionFavoritos.classList.add("d-none");
-    seccionPolitica.classList.add("d-none");
-    window.scrollTo(0, 0)
-})
