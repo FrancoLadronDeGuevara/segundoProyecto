@@ -111,11 +111,12 @@ formulario.addEventListener('submit', (e) => {
     Swal.fire({
       icon: 'success',
       title: 'Registro exitoso!',
-      html: '<a href="../index.html" style="color: black; text-decoration:none; font-weight: bolder">Ir al Inicio</a>',
       showConfirmButton: false,
-      footer: `Bienvenido a SoundStream ${nombre}`,
       allowOutsideClick: false
     })
+	let interval = setInterval(()=>{
+		window.location.href= '../index.html'
+	  },2000)
     
 	} else {
     Swal.fire({
