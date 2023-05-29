@@ -26,7 +26,7 @@ formulario.addEventListener('submit', (e)=>{
   if(!usuarioValido){
     Swal.fire({
       icon: 'error',
-      text: 'El usuario ingresado no es valido',
+      text: 'El e-mail y/o contraseña ingresado son invalidas',
       timer: 2000,
       toast: true,
       position: 'top',

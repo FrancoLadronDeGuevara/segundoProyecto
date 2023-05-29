@@ -17,15 +17,23 @@ main {
 	animation-duration: 1s;
 }
 
+.con,a{
+	font-size: 0.7rem;
+}
+
 .formulario {
     display: flex;
     flex-direction: column;
 	padding: 2rem;
 	border: 2px solid aliceblue;
 	border-radius: 5px;
-	margin-top:10rem;
+	margin-top:6rem;
+	gap: 1rem;
 }
 
+.formulario:hover{
+	box-shadow: 3px 0px 30px rgba(13, 42, 202, 0.822);
+}
 
 .formulario__label {
 	display: block;
@@ -50,9 +58,9 @@ main {
 }
 
 .formulario__input:focus {
-	border: 3px solid #0075FF;
+	border: 3px solid #0077ff71;
 	outline: none;
-	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+	box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.123);
 }
 
 .formulario__input-error {
@@ -116,7 +124,8 @@ main {
 }
 
 .formulario__btn:hover {
-	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+	-webkit-box-shadow: 0px 0px 9px 1px #fff8f865; 
+box-shadow: 0px 0px 9px 1px #fff8f87e;;
 }
 
 .formulario__mensaje-exito {
