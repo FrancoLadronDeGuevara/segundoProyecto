@@ -26,7 +26,17 @@ formulario.addEventListener('submit', (e)=>{
   if(!usuarioValido){
     Swal.fire({
       icon: 'error',
-      text: 'Email y/o contraseña incorrectos'
+      text: 'El usuario ingresado no es valido',
+      timer: 2000,
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      showClass: {
+        popup: 'animate__bounceIn'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutDown'
+      }
     })
     return;
   }
@@ -41,3 +51,5 @@ formulario.addEventListener('submit', (e)=>{
     window.location.href= '../index.html'
   },2000)
 })
+
+
