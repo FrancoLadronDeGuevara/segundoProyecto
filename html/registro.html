@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/registro.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<script src="https://kit.fontawesome.com/cf155cf13e.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <main>
@@ -16,29 +17,31 @@
 
 			<!-- Grupo: Nombre -->
 			<div class="formulario__grupo" id="grupo__nombre">
-				<label for="nombre" class="formulario__label">Nombre</label>
+				<label for="nombre" class="formulario__label">Nombre:</label>
 				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="nombre" id="nombre" autofocus>
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					<i class="fa-regular fa-user fa-2xl"></i>
+					<input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="... Ingresar Nombre" autofocus>
 				</div>
 				<p class="formulario__input-error">El nombre debe ser de 4 a 16 dígitos y solo puede contener números, letras o guión bajo.</p>
 			</div>
-      
-      <!-- Grupo: Correo Electronico -->
-      <div class="formulario__grupo" id="grupo__correo">
-        <label for="correo" class="formulario__label">Correo Electrónico</label>
-        <div class="formulario__grupo-input">
-          <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
-          <i class="formulario__validacion-estado fas fa-times-circle"></i>
-        </div>
-        <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-      </div>
+
+            <!-- Grupo: Correo Electronico -->
+            <div class="formulario__grupo" id="grupo__correo">
+                <label for="correo" class="formulario__label">Correo Electrónico:</label>
+                <div class="formulario__grupo-input">
+					<i class="fa-regular fa-envelope fa-2xl"></i>
+                <input type="email" class="formulario__input" name="correo" id="correo" placeholder="... Ingresar correo@correo.com">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+            </div>
 
 			<!-- Grupo: Contraseña -->
 			<div class="formulario__grupo" id="grupo__password">
-				<label for="password" class="formulario__label">Contraseña</label>
+				<label for="password" class="formulario__label">Contraseña:</label>
 				<div class="formulario__grupo-input">
-					<input type="password" class="formulario__input" name="password" id="password">
+					<i class="fa-solid fa-lock fa-2xl"></i>
+					<input type="password" class="formulario__input" name="password" id="password" placeholder="... Ingresar Contraseña">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
@@ -46,9 +49,10 @@
 
 			<!-- Grupo: Contraseña 2 -->
 			<div class="formulario__grupo" id="grupo__password2">
-				<label for="password2" class="formulario__label">Repetir Contraseña</label>
+				<label for="password2" class="formulario__label">Repetir Contraseña:</label>
 				<div class="formulario__grupo-input">
-					<input type="password" class="formulario__input" name="password2" id="password2">
+					<i class="fa-solid fa-lock fa-2xl"></i>
+					<input type="password" class="formulario__input" name="password2" id="password2" placeholder="... Ingresar Contraseña Nuevamente">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
@@ -57,14 +61,18 @@
 			<!-- Grupo: Terminos y Condiciones -->
 			<div class="formulario__grupo" id="grupo__terminos">
 				<label class="formulario__label">
-					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
-					Acepto los Terminos y Condiciones
+					<a href="./terminos.html">Acepto los Términos y Condiciones</a>
 				</label>
 			</div>
 
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
 				<button type="submit" class="formulario__btn">Enviar</button>
 			</div>
+
+			<div>
+			<p>¿Ya tienes una cuenta?<a class="formulario_iniciar_sesion" href="../html/login.html"> Iniciar Sesión</a></p>
+			<a href="../index.html"><i class="fa-sharp fa-regular fa-circle-left fa-2xl"></i></a>
+		    </div>
 		</form>
 	</main>
 

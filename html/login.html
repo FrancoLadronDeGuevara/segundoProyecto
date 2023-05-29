@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Inicio De Sesion</title>
+  <link rel="icon" type="image/png" href="../assets/logo/logoSSblack.png">
   <link rel="stylesheet" href="../css/login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -13,10 +14,14 @@
 
 <body>
   <main>
-    
+
     <form action="" class="formulario" id="formulario">
       <!-- Grupo: Correo Electronico -->
-      <h2 style="text-align: center;">Iicia Sesión en SoundStream</h2>
+      <div class="titulo-flecha">
+        <a href="../index.html"><i class="fa-solid fa-arrow-left" style="font-size: 2rem;"></i></a>
+        <h2 style="text-align: center;">Inicia Sesión en SoundStream</h2>
+      </div>
+
       <div class="formulario__grupo" id="grupo__correo">
         <label for="correo" class="formulario__label">Correo Electrónico</label>
         <div class="formulario__grupo-input">
@@ -32,12 +37,19 @@
       <div class="formulario__grupo" id="grupo__password">
         <label for="password" class="formulario__label">Contraseña</label>
         <div class="formulario__grupo-input">
-          <input type="password" class="formulario__input" name="password" id="password" required>
+          <input type="password" class="formulario__input" name="password" id="password"
+            placeholder="ingrese su contraseña" required>
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
-        <a id="con" href="">Olvidaste tu contraseña?</a>
+
         <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
       </div>
+
+      <div class="mensajes-ayuda">
+        <a id="con" href="./error404.html">Olvidaste tu contraseña?</a>
+        <a href="./registro.html">No tienes usuario?Registrate aca</a>
+      </div>
+
 
       <div class="formulario__grupo formulario__grupo-btn-enviar">
         <button type="submit" class="formulario__btn">Enviar</button>
@@ -45,6 +57,7 @@
   </main>
   <script src="../js/login.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://use.fontawesome.com/c2813ccf5b.js"></script>
 
 </body>
 
