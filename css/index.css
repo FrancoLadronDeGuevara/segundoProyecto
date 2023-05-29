@@ -169,3 +169,79 @@ html {
         filter: hue-rotate(360deg);
     }
 }
+
+/* AGUS */
+.artista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 17rem;
+    border: 0 !important;
+    text-align: center;
+    margin: 1rem auto !important;
+    background-color: rgba(128, 128, 128, 0.541) !important;
+    color: aliceblue;
+  }
+  
+  .textos {
+    text-align: center;
+  }
+  
+  .img-circular {
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+  
+  .contacto a {
+    text-decoration: none;
+    font-size: 2rem;
+  }
+  
+  .redsocial:hover {
+    animation: shakeY;
+    animation-duration: 2s;
+    color: aliceblue;
+  }
+  
+  .titulo-adn {
+    color: #E93232;
+    font-weight: 600;
+  }
+  
+  /* DETALLE - ARTISTAS */
+  
+  .titulo-artistas {
+    color: aliceblue;
+  }
+  
+  /* SHAKIRA */
+  
+  #titulo-foto-artista {
+    position: absolute;
+    top: 250px;
+    left: 360px;
+  }
+  
+  .btn-play {
+    border: none;
+    background-color: #ffffff;
+  }
+  
+  .botonShakira {
+    text-decoration: none;
+  }
+  
+  .botonShakira:hover {
+    text-shadow: black 0px 0px 10px;
+  }
+  
+  /* ARTISTAS */
+  #accordionFlushExample {
+    width: 51.7vw;
+  }
+  
+  .btn{
+    background-color: rgba(128, 128, 128, 0.541);
+    border: 1px solid white;
+    color:#ffffff
+  }
