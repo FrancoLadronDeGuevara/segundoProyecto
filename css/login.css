@@ -20,7 +20,12 @@ main {
 .formulario {
     display: flex;
     flex-direction: column;
+	padding: 2rem;
+	border: 2px solid aliceblue;
+	border-radius: 5px;
+	margin-top:10rem;
 }
+
 
 .formulario__label {
 	display: block;
