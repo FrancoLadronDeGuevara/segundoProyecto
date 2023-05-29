@@ -37,12 +37,12 @@ html {
 }.animacionTextoSoundStream{
     font-weight: bolder;
     color: #dd7732;
-}.card{
+}.cardInfo{
     position: relative;
-}.card:hover{
+}.cardInfo:hover{
     box-shadow: white 0px 0px 20px;
     transition: all ease-in-out .1s;
-}.card-title{
+}.cardInfoTitulo{
     position: absolute;
     color: white;
     text-align: center;
@@ -51,7 +51,7 @@ html {
     text-shadow: black 5px 5px 5px;
     margin-top: 1rem;
     z-index: 1;
-}.card-text{
+}.cardInfoText{
     position: absolute;
     color: whitesmoke;
     font-size: 1rem;
