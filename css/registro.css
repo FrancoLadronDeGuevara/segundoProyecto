@@ -6,6 +6,8 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	background: black;
+	padding:80px;
+	text-align: center;
 }
 
 main {
@@ -20,21 +22,28 @@ main {
 .formulario {
     display: flex;
     flex-direction: column;
+	border: #fff 2px solid;
+	border-radius: 10px;
+	box-shadow: #353636 6px 6px 1px 1px ;
+	padding: 20px;
+	margin: 0px 50px;
+	background-color: #131212;
 }
 
 .formulario__label {
 	display: block;
 	font-weight: 700;
 	padding: 10px;
-	cursor: pointer;
+	
 }
 
 .formulario__grupo-input {
 	position: relative;
+	
 }
 
 .formulario__input {
-	width: 100%;
+	width: 70%;
 	background: #09090A;
 	border: 3px solid transparent;
 	border-radius: 3px;
@@ -42,6 +51,7 @@ main {
 	line-height: 45px;
 	padding: 0 40px 0 10px;
 	transition: .3s ease all;
+	cursor: pointer;
 }
 
 .formulario__input:focus {
@@ -71,6 +81,11 @@ main {
 
 .formulario__checkbox {
 	margin-right: 10px;
+}
+
+.formulario_iniciar_sesion{
+	color: #0075FF;
+	text-decoration: none;
 }
 
 .formulario__mensaje {
