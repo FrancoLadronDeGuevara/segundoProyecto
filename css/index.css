@@ -31,9 +31,9 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 10px;
-    margin: 0; 
+    margin: 1 rem 0; 
     height: 80vh;
-    padding: 0;
+    padding: 1 rem;
 }.animacionTextoSoundStream{
     font-weight: bolder;
     color: #dd7732;
