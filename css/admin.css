@@ -1,0 +1,16 @@
+table, td, th{
+    border: black solid 1px;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+}
+
+.containerCanciones table th{
+    font-size: 12px;
+}
+
+.containerCanciones table td{
+    font-size: 10px;
+}

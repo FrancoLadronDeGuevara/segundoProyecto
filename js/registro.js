@@ -17,22 +17,22 @@ const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
-		break;
+			break;
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
 			validarPassword2();
-		break;
+			break;
 		case "password2":
 			validarPassword2();
-		break;
+			break;
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
-		break;
+			break;
 	}
 }
 
 const validarCampo = (expresion, input, campo) => {
-	if(expresion.test(input.value)){
+	if (expresion.test(input.value)) {
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
 		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
@@ -53,7 +53,7 @@ const validarPassword2 = () => {
 	const inputPassword1 = document.getElementById('password');
 	const inputPassword2 = document.getElementById('password2');
 
-	if(inputPassword1.value !== inputPassword2.value){
+	if (inputPassword1.value !== inputPassword2.value) {
 		document.getElementById(`grupo__password2`).classList.add('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-correcto');
 		document.querySelector(`#grupo__password2 i`).classList.add('fa-times-circle');
@@ -77,61 +77,61 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
-  const nombre = document.getElementById('nombre').value;
-  const email = document.getElementById('correo').value;
-  const password = document.getElementById('password').value;
+	const nombre = document.getElementById('nombre').value;
+	const email = document.getElementById('correo').value;
+	const password = document.getElementById('password').value;
 
-  const usuarios = JSON.parse(localStorage.getItem('listaUsuarios')) || [];
-  const emailRegistrado = usuarios.find(usuario => usuario.email === email);
-  if(emailRegistrado){
-    Swal.fire({
-      icon: 'error',
-      text: 'El email ingresado ya se encuentra registrado',
-      timer: 2000,
-      toast: true,
-      position: 'top',
-      showConfirmButton: false,
-      showClass: {
-        popup: 'animate__animated animate__fadeInDown'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__fadeOutDown'
-      }
-    })
-    return;
-  }
+	const usuarios = JSON.parse(localStorage.getItem('listaUsuarios')) || [];
+	const emailRegistrado = usuarios.find(usuario => usuario.email === email);
+	if (emailRegistrado) {
+		Swal.fire({
+			icon: 'error',
+			text: 'El email ingresado ya se encuentra registrado',
+			timer: 2000,
+			toast: true,
+			position: 'top',
+			showConfirmButton: false,
+			showClass: {
+				popup: 'animate__animated animate__fadeInDown'
+			},
+			hideClass: {
+				popup: 'animate__animated animate__fadeOutDown'
+			}
+		})
+		return;
+	}
 
 	const terminos = document.getElementById('terminos');
-	if(campos.nombre && campos.password && campos.correo && terminos.checked ){
+	if (campos.nombre && campos.password && campos.correo && terminos.checked) {
 		formulario.reset();
 
-    usuarios.push({nombre: nombre, email: email, password: password});
-    localStorage.setItem('listaUsuarios', JSON.stringify(usuarios));
-    
-    Swal.fire({
-      icon: 'success',
-      title: 'Registro exitoso!',
-      showConfirmButton: false,
-      allowOutsideClick: false
-    })
-	let interval = setInterval(()=>{
-		window.location.href= '../index.html'
-	  },2000)
-    
+		usuarios.push({ nombre: nombre, email: email, password: password });
+		localStorage.setItem('listaUsuarios', JSON.stringify(usuarios));
+
+		Swal.fire({
+			icon: 'success',
+			title: 'Registro exitoso!',
+			showConfirmButton: false,
+			allowOutsideClick: false
+		})
+		let interval = setInterval(() => {
+			window.location.href = '../index.html'
+		}, 2000)
+
 	} else {
-    Swal.fire({
-      icon: 'error',
-      text: 'Por favor, rellena el formulario correctamente',
-      timer: 800,
-      toast: true,
-      position: 'bottom',
-      showConfirmButton: false,
-      showClass: {
-        popup: 'animate__animated animate__fadeInUp'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__fadeOutUp'
-      }
-    })
+		Swal.fire({
+			icon: 'error',
+			text: 'Por favor, rellena el formulario correctamente',
+			timer: 800,
+			toast: true,
+			position: 'bottom',
+			showConfirmButton: false,
+			showClass: {
+				popup: 'animate__animated animate__fadeInUp'
+			},
+			hideClass: {
+				popup: 'animate__animated animate__fadeOutUp'
+			}
+		})
 	}
 });

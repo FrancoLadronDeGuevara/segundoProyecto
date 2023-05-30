@@ -1,7 +1,11 @@
 const adminLogueado = JSON.parse(localStorage.getItem('adminLogueado')) || false;
 const listaUsuarios = JSON.parse(localStorage.getItem('listaUsuarios')) || [];
+const listaCanciones = JSON.parse(localStorage.getItem('listaCanciones')) || [];
 const btnCerrarSesion = document.getElementById('btnCerrarSesion');
 const btnUsuarios = document.getElementById('botonUsuarios');
+const btnCanciones = document.getElementById('botonCanciones');
+const btnGenerarId = document.getElementById('generarIdCancion');
+const formCancion = document.getElementById('formCancion');
 
 if(!adminLogueado){
     Swal.fire({
@@ -43,6 +47,7 @@ btnCerrarSesion.addEventListener('click', () => {
 
 btnUsuarios.addEventListener("click", ()=>{
     document.querySelector('.containerUsuarios').classList.remove('d-none');
+    document.querySelector('.containerCanciones').classList.add('d-none');
     verListaUsuarios();
 })
 
@@ -109,3 +114,135 @@ function eliminarUsuario(usuario){
         }
     })
 }
+
+// function generarId(){
+//     document.getElementById('inputId').value = Math.floor(Math.random()*10000000000);
+// }
+btnCanciones.addEventListener("click", ()=>{
+    document.querySelector('.containerUsuarios').classList.add('d-none')
+    document.querySelector('.containerCanciones').classList.remove('d-none');
+    verListaCanciones();
+})
+
+function verListaCanciones(){
+    let dataFila = '';
+    if(listaCanciones.length > 0){
+        for (const i in listaCanciones) {
+            let cancion = listaCanciones[i];
+            dataFila += '<tr>';
+            dataFila += `<td>${cancion.idCancion}</td>`
+            dataFila += `<td>${cancion.tituloCancion}</td>`
+            dataFila += `<td>${cancion.artistaCancion}</td>`
+            dataFila += `<td>${cancion.categoriaCancion}</td>`
+            dataFila += `<td>${cancion.imagenCancion}</td>`
+            dataFila += `<td>${cancion.duracionCancion}</td>`
+            dataFila += `<td>${cancion.nombreCancion}</td>`
+            dataFila += `<td>${cancion.archivoCancion}</td>`
+            dataFila += `<td><button class="btn btn-warning" onclick="editarCancion(${i})"><i class="bi bi-pencil"></i></button></td>`
+            dataFila += `<td><button class="btn btn-danger" onclick="eliminarCancion(${i})"><i class="bi bi-trash"></i></button></td>`
+            dataFila += '</tr>'
+        }
+
+        document.getElementById('dataCanciones').innerHTML = dataFila;
+    }
+}
+
+function eliminarCancion(cancion){
+    Swal.fire({
+        title: '¿Eliminar Canción?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'No, cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Eliminando canción...',
+                toast: true,
+                position: 'center',
+                timer: 2000,
+                showConfirmButton: false
+            })
+            listaCanciones.splice(cancion, 1);
+            localStorage.setItem('listaCanciones', JSON.stringify(listaCanciones));
+            let interval = setInterval(() => {
+                verListaCanciones();
+            }, 2000)
+        }
+    })
+}
+
+btnGenerarId.addEventListener("click", (e)=>{
+    e.preventDefault();
+    const id = document.getElementById('inputId').value = Math.floor(Math.random()*10000000000);
+})
+
+formCancion.addEventListener("submit", (e)=>{
+    e.preventDefault();
+
+    const id = document.getElementById('inputId').value;
+	const titulo = document.getElementById('tituloCancion').value;
+	const artista = document.getElementById('artistaCancion').value;
+    const categoria = document.getElementById('generoCancion').value;
+	const imagen = document.getElementById('imagenCancion').value;
+	const minutos = document.getElementById('minutosCancion').value;
+    const segundos = document.getElementById('segundosCancion').value;
+    const nombre = document.getElementById('nombreCancion').value;
+	const archivo = document.getElementById('archivoCancion').value;
+
+	const canciones = JSON.parse(localStorage.getItem('listaCanciones')) || [];
+	const cancionRepetida = canciones.find(cancion => cancion.nombre === nombre && cancion.titulo === titulo);
+	if (cancionRepetida) {
+		Swal.fire({
+			icon: 'error',
+			text: 'La canción ya se encuentra en la lista',
+			timer: 2000,
+			toast: true,
+			position: 'top',
+			showConfirmButton: false,
+			showClass: {
+				popup: 'animate__animated animate__fadeInDown'
+			},
+			hideClass: {
+				popup: 'animate__animated animate__fadeOutDown'
+			}
+		})
+		return;
+	}
+
+    if (id != '' && titulo != '' && artista != '' && categoria != '' && imagen != '' && !isNaN(minutos) && !isNaN(segundos) && nombre != '' && archivo != '') {
+		formCancion.reset();
+
+		listaCanciones.push({ idCancion: id, tituloCancion: titulo, artistaCancion: artista, categoriaCancion: categoria, imagenCancion: `../assets/album/${imagen}`, duracionCancion: `${minutos}:${segundos}`, nombreCancion: nombre, archivoCancion: `../assets/musica/${archivo}`});
+		localStorage.setItem('listaCanciones', JSON.stringify(listaCanciones));
+
+		Swal.fire({
+			icon: 'success',
+			title: 'Cancion agregada!',
+			showConfirmButton: false,
+			allowOutsideClick: false
+		})
+		let interval = setInterval(() => {
+			verListaCanciones();
+		}, 2000)
+
+	} else {
+		Swal.fire({
+			icon: 'error',
+			text: 'Por favor, rellena los datos correctamente',
+			timer: 800,
+			toast: true,
+			position: 'bottom',
+			showConfirmButton: false,
+			showClass: {
+				popup: 'animate__animated animate__fadeInUp'
+			},
+			hideClass: {
+				popup: 'animate__animated animate__fadeOutUp'
+			}
+		})
+	}
+})
