@@ -52,29 +52,7 @@ btnCerrarSesion.addEventListener('click', () => {
     })
 })
 
-class Cancion {
-    constructor(idCancion, tituloCancion, artistaCancion, categoriaCancion, imagenCancion, duracionCancion, nombreCancion, archivoCancion) {
-        this.idCancion = idCancion;
-        this.tituloCancion = tituloCancion;
-        this.artistaCancion = artistaCancion;
-        this.categoriaCancion = categoriaCancion;
-        this.imagenCancion = imagenCancion;
-        this.duracionCancion = duracionCancion;
-        this.nombreCancion = nombreCancion;
-        this.archivoCancion = archivoCancion;
-    }
-}
-
-let canciones = [
-    new Cancion('3215865168', "Monotonía", "Shakira", "Pop", "../assets/album/monotonia.jpg", "2:28", "Shakira ft. Ozuna - Monotonía", ''),
-    new Cancion('5498472168', 'Besos en Guerra', 'Morat', 'Pop', '../assets/album/balasperdidas.jpg', '2:28', 'Morat ft. Juanes - Besos en guerra', ''),
-    new Cancion('5487454187', 'Beso', 'Rosalia', 'Urbano Latino', '../assets/album/rr.jpg', '3:14', 'Rosalia ft. Rauw Alejandro - Beso', ''),
-    new Cancion('8795165184', 'Die for you', 'The Weeknd', 'Dance/Electrónica', '../assets/album/starboy.jpg', '4:20', 'The Weeknd - Die for you', ''),
-    new Cancion('8751321845', 'La triple T', 'Tini', 'Cumbia, Pop', '../assets/album/cupido.jpeg', '2:47', 'TINI - La Triple T', ''),
-    new Cancion('0541950216', 'Efecto', 'BadBunny', 'Urbano Latino', '../assets/album/unveranosinti.jpg', '3:33', 'Bad Bunny - Efecto', ''),
-]
-
-localStorage.setItem('listaCanciones', JSON.stringify(canciones));
+const canciones = JSON.parse(localStorage.getItem('listaCanciones'));
 
 
 canciones.forEach((cancion) => {
