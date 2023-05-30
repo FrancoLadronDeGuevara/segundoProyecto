@@ -245,3 +245,32 @@ html {
     border: 1px solid white;
     color:#ffffff
   }
+  @media(min-width:320px  ) and (max-width:425px){
+    .cardInfo{
+        margin: 20px;
+    }
+    .footer-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .seccionTitulo{
+        background-image: url("../assets/logo/principal.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        height: 40vh;
+    }
+    }
+
+    @media(min-width:425px) and (max-width:568px){
+        .seccionTitulo{
+            background-image: url("../assets/logo/principal.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            height: 50vh;
+        }
+    }
