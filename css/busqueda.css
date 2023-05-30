@@ -1,0 +1,15 @@
+body{
+    background-color: black !important;
+}
+
+header{
+    background-color: #09090A !important;
+}
+
+.card-title{
+    font-size: 16px;
+}
+
+.card-text{
+    font-size: 12px;
+}
