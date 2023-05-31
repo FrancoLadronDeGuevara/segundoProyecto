@@ -22,7 +22,6 @@ main {
 }
 
 
-
 .formulario {
     display: flex;
     flex-direction: column;
@@ -83,6 +82,15 @@ main {
 
 .formulario__input-error-activo {
 	display: block;
+}
+
+.formulario_contraseña{
+	color: #0075FF;
+}
+
+.formulario_registrarse{
+	color: #0075FF;
+	text-decoration: none;
 }
 
 .formulario__validacion-estado {
@@ -170,14 +178,11 @@ box-shadow: 0px 0px 9px 1px #fff8f87e;;
 }
 
 
+/* ------- MediaQuerys ------ */
 
 @media(max-width:594px){
-	
-
-
 	.titulo-flecha{
 		font-size: 1.5rem;
-
 	}
 
 	.formulario{
@@ -191,35 +196,29 @@ box-shadow: 0px 0px 9px 1px #fff8f87e;;
 }
 
 
-
 @media(max-width:474px){
-	
-
-
 	.titulo-flecha{
 		font-size: 1rem;
-
 	}
 
 	.formulario__btn{
 		width: 5rem;
 	}
 
-
 	i{
 		font-size: 1.2rem;
-
 	}
 
 	.formulario{
 		width: 100%;
 		margin: 3rem 0rem;
-}
-.mensajes-ayuda{
-	font-size: 0.8rem;
-}
+    }
 
-label{
-	font-size: 0.6rem;
-}
+    .mensajes-ayuda{
+	    font-size: 0.8rem;
+    }
+
+    label{
+	    font-size: 0.6rem;
+    }
 }
