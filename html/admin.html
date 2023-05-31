@@ -64,18 +64,21 @@
         <div class="col py-3 px-0">
 
             <div class="container containerUsuarios d-none">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>NOMBRE</th>
-                            <th>USUARIO</th>
-                            <th>CONTRASEÑA</th>
-                            <th>ELIMINAR</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dataUsuarios">
-                    </tbody>
-                </table>
+                <div class="container tablaUsuarios">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>NOMBRE</th>
+                                <th>USUARIO</th>
+                                <th>CONTRASEÑA</th>
+                                <th>ELIMINAR</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataUsuarios">
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
             <div class="container containerCanciones d-none">
                 <div class="container-fluid tablaCanciones">
@@ -89,7 +92,6 @@
                                 <th>ÁLBUM</th>
                                 <th>DURACIÓN</th>
                                 <th>NOMBRE</th>
-                                <th>ARCHIVO</th>
                                 <th>EDITAR</th>
                                 <th>ELIMINAR</th>
                             </tr>
@@ -108,6 +110,9 @@
                                 ID</button>
                         </div>
                         <div class="mb-3">
+                            <input type="text" class="form-control" id="nombreCancion" placeholder="Nombre canción">
+                        </div>
+                        <div class="mb-3">
                             <input type="text" class="form-control" id="tituloCancion" placeholder="Titulo">
                         </div>
                         <div class="mb-3">
@@ -119,24 +124,16 @@
                     </div>
                     <div class="container grupo2 mt-3">
                         <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="duracionCancion" placeholder="minutos:segundos">
+                        </div>
+                        <div class="input-group mb-3">
                             <input type="file" class="form-control" id="imagenCancion">
                             <label class="input-group-text" for="imagenCancion">Álbum</label>
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Duración</span>
-                            <input type="number" class="form-control" placeholder="Minutos" id="minutosCancion">
-                            <input type="number" class="form-control" placeholder="Segundos" id="segundosCancion">
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="nombreCancion" placeholder="Nombre canción">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="archivoCancion">
-                            <label class="input-group-text" for="archivoCancion">MP3/OGG</label>
                         </div>
                     </div>
                     <div class="w-100 text-center">
                         <button type="submit" class="btn btn-success" id="agregarCancion">Agregar</button>
+                        <button type="button" class="btn btn-warning" id="actualizarCancion" disabled>Actualizar</button>
                     </div>
                 </form>
 
