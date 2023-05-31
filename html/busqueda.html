@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscá tus canciones favoritas</title>
+    <link rel="stylesheet" href="../css/busqueda.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    <header class="sticky-top">
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-md px-3" id="navBarPrincipal">
+            <div class="container-fluid d-flex">
+
+                <a class="d-flex justify-content-center pt-2" href="#">
+                    <img src="../assets/logo/logoSS.png" alt="logoSoundStream" width="100" height="80">
+                </a>
+
+                <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="bi bi-list"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item mx-3 my-3 d-none" id="btnAdmin">
+                            <a href="../html/admin.html" class="btn btn-primary w-100">Panel admin</a>
+                        </li>
+                        <li class="nav-item mx-3 my-3 d-none" id="btnCerrarSesion">
+                            <button class="btn btn-danger w-100">Salir</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--FIN NAVBAR-->
+    </header>
+
+    <main class="container">
+        <h5 class="text-white text-center"><i>Buscá tus canciones favoritas para escucharlas o agregarlas a tu playlist</i></h5>
+        <div class="container d-flex justify-content-center">
+            <input type="search" class="form-control w-50" id="barraBusqueda" placeholder="Artistas, canciones, albums, grupos">
+            <button class="btn btn-primary" id="btnBusqueda"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="container-fluid row my-5 d-flex justify-content-center align-items-center" id="contenedorCanciones">
+
+        </div>
+    </main>
+
+    <!--INICIO FOOTER-->
+    <footer class="container col-12 pt-2 px-5 text-white">
+        <div class="container d-flex justify-content-between flex-column flex-sm-row">
+            <div class="logo">
+                <a href="#">
+                    <img src="../assets/logo/logoSS.png" class="img-fluid" alt="Logo de página" width="150" height="130">
+                </a>
+            </div>
+
+            <div class="contacto">
+                <h2>Contacto</h2>
+                <div class="d-flex flex-column">
+                    <a class="linksFooter" href="">Sobre Nosotros</a>
+                    <a class="linksFooter" href="">Soporte</a>
+                    <a href="./html/politica.html" class="linksFooter" id="botonPolitica">Política de Privacidad</a>
+                    <a href="./html/terminos.html" class="linksFooter" id="botonTerminos">Términos y Condiciones</a>
+                </div>
+            </div>
+
+            <div class="lugar">
+                <h2>Nuestro Lugar</h2>
+                <p class="m-0">General Paz 576</p>
+                <p class="m-0">Tucumán 4000</p>
+                <p class="m-0">T: (381) 578 3030</p>
+                <p class="m-0">rollingcode@gmail.com</p>
+            </div>
+
+            <div class="redes">
+                <h2>Síguenos</h2>
+                <div class="red-social">
+                    <a href="https://es-la.facebook.com/" target="_blank"><i
+                            class="bi bi-facebook redes-sociales"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i
+                            class="bi bi-instagram redes-sociales"></i></a>
+                    <a href="https://github.com/" target="_blank"><i class="bi bi-github redes-sociales"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border border-light">
+
+        <div class="container-fluid text-center">
+            <div>&copy; 2023 <b>Grupo-1, <a class="rollingCodeLink" href="https://rollingcodeschool.com/">Rolling
+                        Code</a> - Todos los Derechos Reservados.</b>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/busqueda.js"></script>
+</body>
+</html>

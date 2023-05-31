@@ -6,8 +6,6 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	background: black;
-	padding:80px;
-	text-align: center;
 }
 
 main {
@@ -23,27 +21,43 @@ main {
     display: flex;
     flex-direction: column;
 	border: #fff 2px solid;
-	border-radius: 10px;
-	box-shadow: #353636 6px 6px 1px 1px ;
+	border-radius: 5px;
 	padding: 20px;
-	margin: 0px 50px;
-	background-color: #131212;
+	margin-top: 4rem;
+	background-color: #000000;
+	width: 100%;
 }
+
+.formulario:hover{
+	box-shadow: 5px 0px 45px rgba(31, 56, 199, 0.877);
+}
+
+
+
 
 .formulario__label {
 	display: block;
-	font-weight: 700;
-	padding: 10px;
+	font-weight: 1rem;
+	padding: 1rem;
 	
 }
 
 .formulario__grupo-input {
-	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	
 	
 }
 
+#grupo__terminos{
+	text-align: center;
+	margin-top: 1rem;
+}
+
 .formulario__input {
-	width: 70%;
+	width: 90%;
 	background: #09090A;
 	border: 3px solid transparent;
 	border-radius: 3px;
@@ -64,6 +78,11 @@ main {
 	font-size: 12px;
 	margin-bottom: 0;
 	display: none;
+}
+
+.parrafo{
+	text-align: center;
+
 }
 
 .formulario__input-error-activo {
@@ -123,6 +142,7 @@ main {
 	border-radius: 3px;
 	cursor: pointer;
 	transition: .1s ease all;
+	margin: 2rem 0;
 }
 
 .formulario__btn:hover {
@@ -156,4 +176,21 @@ main {
 
 .formulario__grupo-incorrecto .formulario__input {
 	border: 3px solid #bb2929;
+}
+
+@media(max-width:380px){
+	
+	.formulario{
+		width: 100%;
+		
+	}
+
+	.titulo-flecha{
+		font-size: 1rem;
+
+	}
+
+	main{
+		width: 100vw;
+	}
 }
