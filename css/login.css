@@ -54,7 +54,11 @@ main {
 }
 
 .formulario__grupo-input {
-	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
 }
 
 .formulario__input {
