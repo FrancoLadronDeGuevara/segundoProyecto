@@ -9,16 +9,14 @@ body {
 }
 
 main {
-	max-width: 800px;
-	width: 90%;
-	margin: auto;
-	padding: 0 40px;
+
 	animation: fadeInLeft;
 	animation-duration: 1s;
+	padding: 0.5rem 1rem;
 }
 
-.con,a{
-	font-size: 0.7rem;
+.titulo-flecha{
+	font-size: 2rem;
 }
 
 
@@ -29,7 +27,7 @@ main {
 	padding: 2rem;
 	border: 2px solid aliceblue;
 	border-radius: 5px;
-	margin-top:6rem;
+	margin-top:1rem;
 	gap: 1rem;
 }
 
@@ -125,7 +123,7 @@ main {
 	height: 45px;
 	line-height: 45px;
 	width: 30%;
-	background: #000;
+	background: #0907636c;
 	color: #fff;
 	font-weight: bold;
 	border: none;
@@ -168,19 +166,50 @@ box-shadow: 0px 0px 9px 1px #fff8f87e;;
 	border: 3px solid #bb2929;
 }
 
-@media(max-width:380px){
+
+
+@media(max-width:594px){
 	
-	.formulario{
-		width: 100%;
-		
+
+
+	.titulo-flecha{
+		font-size: 1.5rem;
+
 	}
+
+	form{
+		width: 100%;
+		margin: 1rem 1rem 1rem 1;
+	}
+
+	label{
+		font-size: 0.8rem;
+	}
+}
+
+@media(max-width:474px){
+	
+
 
 	.titulo-flecha{
 		font-size: 1rem;
 
 	}
 
-	main{
-		width: 100vw;
+	i{
+		font-size: 1.2rem;
+
 	}
+
+	form{
+		width: 100%;
+		margin: 1rem 1rem 1rem 1;
+}
+.mensajes-ayuda{
+	font-size: 0.8rem;
+}
+
+label{
+	font-size: 0.6rem;
+}
 }
