@@ -8,9 +8,13 @@ table{
 }
 
 .containerCanciones table th{
-    font-size: 12px;
+    font-size: 6px;
 }
 
 .containerCanciones table td{
     font-size: 10px;
+}
+
+.tablaCanciones{
+    overflow-x: scroll;
 }

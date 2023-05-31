@@ -1,4 +1,29 @@
 const formulario = document.getElementById('formulario');
+const adminLogueado = JSON.parse(localStorage.getItem('adminLogueado')) || false;
+const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado')) || false;
+
+if(adminLogueado){
+  Swal.fire({
+      icon: 'error',
+      text: 'Ya estas logueado',
+      showConfirmButton: false
+  })
+  let interval = setInterval(()=>{
+      window.location.href='../index.html'
+  },2000)
+}
+
+if(usuarioLogueado == 'usuarioValido'){
+  Swal.fire({
+      icon: 'error',
+      text: 'Ya estas logueado',
+      showConfirmButton: false
+  })
+  let interval = setInterval(()=>{
+      window.location.href='../index.html'
+  },2000)
+}
+
 
 formulario.addEventListener('submit', (e)=>{
   e.preventDefault();

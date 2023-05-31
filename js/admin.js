@@ -143,6 +143,8 @@ let canciones = [
     new Cancion('0541950216', 'Efecto', 'BadBunny', 'Urbano Latino', '../assets/album/unveranosinti.jpg', '3:33', 'Bad Bunny - Efecto', ''),
 ]
 
+// localStorage.setItem('listaCanciones', JSON.stringify(canciones))
+
 function verListaCanciones(){
     let dataFila = '';
     if(listaCanciones.length > 0){
