@@ -80,7 +80,7 @@
     <div class="mostrarCard"></div>
     <!--SECCION INFORMACION-->
     <article class="container p-0 my-5 d-flex justify-content-between align-items-center flex-column flex-md-row ">
-        <div class="card cardInfo" style=" width: 20rem">
+        <div class="card cardInfo" style=" width: 18rem">
             <img src="assets/logo/escuchandomusica.jpeg" class="card-img-top h-100" alt="...">
             <h5 class="card-title cardInfoTitulo">Tus canciones en todos tus dispositivos, en cualquier momento</h5>
             <p class="card-text cardInfoText">Conectá todos tus dispositivos a la misma vez y disfrutá de toda la música de
@@ -88,7 +88,7 @@
             <a href="./html/error404.html" class="botonCard text-center">Ver más></a>
             <span class="bgCard"></span>
         </div>
-        <div class="card cardInfo" style="width: 20rem;">
+        <div class="card cardInfo" style="width: 18rem;">
             <img src="assets/logo/listadereproduccion.jpg" class="card-img-top h-100" alt="...">
             <h5 class="card-title cardInfoTitulo">Crea tu lista de reproducción y escuchá desde cualquier dispositivo</h5>
             <p class="card-text cardInfoText">Elegí tus canciones para escucharlas con el mejor sonido de alta fidelidad y
@@ -97,7 +97,7 @@
             <a href="./html/error404.html" class="botonCard">Ver más></a>
             <span class="bgCard"></span>
         </div>
-        <div class="card cardInfo" style="width: 20rem;">
+        <div class="card cardInfo" style="width: 18rem;">
             <img src="assets/logo/descargando.jpg" class="card-img-top" alt="...">
             <h5 class="card-title cardInfoTitulo">Escuchá tus canciones en modo desconectado</h5>
             <p class="card-text cardInfoText">SoundStream te ofrece descargar tus canciones con un solo click y desde
@@ -285,17 +285,17 @@
     </footer>
     <!--FIN FOOTER-->
 
-    <!-- <section class="container-fluid reproductor">
-        <div class="bg-danger reproduciendo">
-            <audio id="audio-player" controls>
-                <source src="./assets/musica/Jackson 5 - I Want You Back.mp3" type="audio/mp3">
-            </audio>
+    <section class="container-fluid text-white reproductor d-none flex-column flex-md-row justify-content-center">
+        <div class="reproduciendo w-100 align-self-center">
+            <div id="audio-player">
+                <iframe style="border-radius:12px" id="frameSpotify" width="80%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen" loading="lazy"></iframe>
+            </div>
         </div>
-        <div class="listaCancionesReproductor">
+        <div class="listaCancionesReproductor w-75 pt-2">
 
         </div>
-    </section> -->
-
+    </section>
+    
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>

@@ -6,6 +6,8 @@ const btnIniciarSesion = document.getElementById("btnIniciarSesion");
 const btnRegistrarse = document.getElementById("btnRegistrarse");
 const btnCerrarSesion = document.getElementById("btnCerrarSesion");
 const contenedorCanciones = document.getElementById("contenedorCanciones");
+const reproductorSticky = document.querySelector('.reproductor');
+const mostrarPlaylist = document.querySelector('.listaCancionesReproductor');
 
 //VERIFICAR ADMIN LOGUEADO
 const adminLogueado =
@@ -15,7 +17,9 @@ if (adminLogueado) {
     btnRegistrarse.classList.add("d-none");
     btnAdmin.classList.remove("d-none");
     btnCerrarSesion.classList.remove("d-none");
+    reproductorSticky.classList.add('d-flex');
     document.getElementById("barraBusqueda").removeAttribute("disabled", "");
+    localStorage.setItem('mostrarReproductor', true);
 }
 //VERIFICAR USUARIO LOGUEADO
 const usuarioLogueado =
@@ -24,8 +28,16 @@ if (usuarioLogueado) {
     btnIniciarSesion.classList.add("d-none");
     btnRegistrarse.classList.add("d-none");
     btnCerrarSesion.classList.remove("d-none");
+    reproductorSticky.classList.add('d-flex');
+    localStorage.setItem('mostrarReproductor', true);
     document.getElementById("barraBusqueda").removeAttribute("disabled", "");
 }
+
+const mostrarReproductor = JSON.parse(localStorage.getItem('mostrarReproductor')) || false;
+if(mostrarReproductor){
+    reproductorSticky.classList.remove("d-none");
+}
+
 //FUNCION DEL BOTON CERRAR SESION
 btnCerrarSesion.addEventListener("click", () => {
     Swal.fire({
@@ -46,6 +58,10 @@ btnCerrarSesion.addEventListener("click", () => {
             });
             localStorage.removeItem("adminLogueado");
             localStorage.removeItem("usuarioLogueado");
+            localStorage.removeItem('mostrarReproductor');
+            localStorage.removeItem('playlist');
+            reproductorSticky.classList.remove('d-flex');
+            reproductorSticky.classList.add("d-none");
             let interval = setInterval(() => {
                 window.location.href = "../index.html";
             }, 2000);
@@ -116,19 +132,16 @@ canciones.forEach((cancion) => {
         duracionCancion,
         nombreCancion,
     } = cancion;
-
     contenedorCanciones.innerHTML += `
     <div class="card bg-secondary mx-3 mt-2" style="width: 12rem;">
         <img src="${imagenCancion}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title" style="font-size:16px;">${nombreCancion}</h5>
             <hr>
-            <p class="card-text" style="font-size:12px;">Titulo: <b>${tituloCancion}</b><br>Artista: ${artistaCancion}
-            <br>Género: ${categoriaCancion}<br>Duración: ${duracionCancion}</p>
             <div>
-                <button class="btn btn-success" onclick="reproducirCancion()"><i class="bi bi-play-circle"></i></button>
-                <button class="btn btn-dark" onclick="verDetalle()" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-eye"></i></button>
-                <button class="btn btn-warning" onclick="agregarCancionPlaylist()"><i class="bi bi-plus-square"></i></button>
+                <button class="btn btn-success" onclick="reproducirCancion(${idCancion})"><i class="bi bi-play-circle"></i></button>
+                <button class="btn btn-dark" onclick="verDetalle(${idCancion})"><i class="bi bi-eye"></i></button>
+                <button class="btn btn-warning" onclick="agregarCancionPlaylist(${idCancion})"><i class="bi bi-plus-square"></i></button>
             </div>
         </div>
     </div>
@@ -147,16 +160,14 @@ const filtrar = () => {
         ) {
             contenedorCanciones.innerHTML += `
             <div class="card bg-secondary mx-3 mt-2" style="width: 12rem;">
-            <img src="${cancion.imagenCancion}" class="card-img-top" alt="...">
+            <img src="${cancion.imagenCancion}" class="card-img-top h-100" alt="...">
             <div class="card-body">
             <h5 class="card-title" style="font-size:16px;">${cancion.nombreCancion}</h5>
             <hr>
-            <p class="card-text" style="font-size:12px;">Titulo: <b>${cancion.tituloCancion}</b><br>Artista: ${cancion.artistaCancion}
-            <br>Género: ${cancion.categoriaCancion}<br>Duración: ${cancion.duracionCancion}</p>
             <div>
-                <button class="btn btn-success" onclick="reproducirCancion()><i class="bi bi-play-circle"></i></button>
-                <button class="btn btn-dark" onclick="verDetalle()" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-eye"></i></button>
-                <button class="btn btn-warning" onclick="agregarCancionPlaylist()"><i class="bi bi-plus-square"></i></button>
+                <button class="btn btn-success" onclick="reproducirCancion(${cancion.idCancion})"><i class="bi bi-play-circle"></i></button>
+                <button class="btn btn-dark" onclick="verDetalle(${cancion.idCancion})"><i class="bi bi-eye"></i></button>
+                <button class="btn btn-warning" onclick="agregarCancionPlaylist(${cancion.idCancion})"><i class="bi bi-plus-square"></i></button>
                 </div>
                 </div>
                 </div>
@@ -172,35 +183,130 @@ const filtrar = () => {
 btnBusqueda.addEventListener("click", filtrar);
 inputBusqueda.addEventListener("keyup", filtrar);
 
-function reproducirCancion() {
+function reproducirCancion(idCancion) {
     verificarLogueo("Registrate para escuchar tus canciones favoritas!");
+    const cancion = canciones.find((song)=> song.idCancion == idCancion);
+    console.log(cancion)
+    document.getElementById('frameSpotify').setAttribute('src', `${cancion.urlCancion}`)
 }
 
-function verDetalle() {
-    verificarLogueo("Registrate para usar esta funcionalidad!");
-    const contentDiv = document.getElementById("modalCancion");
-    contentDiv.innerHTML = `
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-    `;
+function verDetalle(idCancion) {
+    if (!usuarioLogueado && !adminLogueado) {
+        Swal.fire({
+            icon: "error",
+            text: `Debes loguearte para usar esta funcionalidad`,
+            showConfirmButton: false,
+            timer: 2000,
+        });
+        let interval = setInterval(() => {
+            window.location.href = "../html/registro.html";
+        }, 2000);
+        return;
+    }
+    const cancion = canciones.find((song)=> song.idCancion == idCancion);
+
+    Swal.fire({
+        title: `${cancion.nombreCancion}`,
+        html: `ID: <b>${cancion.idCancion}</b><br>Artista: <b>${cancion.artistaCancion}</b><br>Género: <b>${cancion.categoriaCancion}</b><br>Duración: <b>${cancion.duracionCancion}</b>`,
+        imageUrl: `${cancion.imagenCancion}`,
+        imageWidth: 200,
+        imageHeight: 250,
+        color: '#FFF',
+        background: '#09090A'
+    })
 
 }
 
-function agregarCancionPlaylist() {
-    verificarLogueo("Registrate para crear una playlist!");
+const playlistUsuario = JSON.parse(localStorage.getItem('playlist')) || [];
+
+if(playlistUsuario.length == 0){
+    mostrarPlaylist.innerHTML = '<p class="text-center mt-3"><i>Todavia no hay canciones agregadas</i></p>';
+}
+if(playlistUsuario.length > 0){
+    verPlaylist()
+}
+
+function verPlaylist(){
+        mostrarPlaylist.innerHTML = '';
+        if (playlistUsuario.length == 0) {
+            mostrarPlaylist.innerHTML = '<p class="text-center mt-3"><i>Todavia no hay canciones agregadas</i></p>';
+        }
+        if (playlistUsuario.length > 0) {
+            for (const i in playlistUsuario) {
+                let cancion = playlistUsuario[i];
+                mostrarPlaylist.innerHTML += `
+            <hr class="m-0 p-0">
+            <div class="d-flex justify-content-between align-items-center">
+                <div><small>${cancion.nombreCancion}</small></div>
+                <div>
+                    <button class="btn btn-outline-success pt-0 px-3" onclick="reproducirCancionPlaylist(${i})"><i class="bi bi-play-circle" style="font-size: 10px;"></i></button>
+                    <button class="btn btn-outline-danger pt-0 px-3" onclick="eliminarCancionPlaylist(${i})"><i class="bi bi-trash" style="font-size: 10px;"></i></button>
+                </div>
+            </div>
+            `;
+            }
+        }
+}
+
+function reproducirCancionPlaylist(indexCancion){
+    document.getElementById('frameSpotify').setAttribute('src', `${playlistUsuario[indexCancion].urlCancion}`)
+}
+
+
+
+function agregarCancionPlaylist(idCancion) {
+    if (!usuarioLogueado && !adminLogueado) {
+        Swal.fire({
+            icon: "error",
+            text: `Debes loguearte para agregar canciones a tu playlist`,
+            showConfirmButton: false,
+            timer: 2000,
+        });
+        let interval = setInterval(() => {
+            window.location.href = "../html/registro.html";
+        }, 2000);
+        return;
+    }
+    mostrarPlaylist.innerHTML = '';
+    const cancion = canciones.find((song)=> song.idCancion == idCancion);
+    Swal.fire({
+        icon: 'success',
+        text: `Cancion agregada a la lista`,
+        showConfirmButton: false,
+        timer: 1500,
+        toast: true,
+        color: '#FFF',
+        background: '#09090A'
+    })
+    playlistUsuario.push(cancion);
+    localStorage.setItem('playlist', JSON.stringify(playlistUsuario));
+    verPlaylist();
+}
+
+function eliminarCancionPlaylist(cancion) {
+    Swal.fire({
+        title: "¿Eliminar Canción?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "No, cancelar",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                icon: "success",
+                title: "Eliminando canción...",
+                toast: true,
+                position: "center",
+                timer: 2000,
+                showConfirmButton: false,
+            });
+            playlistUsuario.splice(cancion, 1);
+            localStorage.setItem("playlist", JSON.stringify(playlistUsuario));
+            verPlaylist();
+        }
+    });
 }
 
 function verificarLogueo(mensaje) {

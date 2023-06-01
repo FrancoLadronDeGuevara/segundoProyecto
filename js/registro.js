@@ -83,7 +83,7 @@ formulario.addEventListener('submit', (e) => {
 
 	const usuarios = JSON.parse(localStorage.getItem('listaUsuarios')) || [];
 	const emailRegistrado = usuarios.find(usuario => usuario.email === email);
-	if (emailRegistrado) {
+	if (emailRegistrado || email === "admin@soundstream.com") {
 		Swal.fire({
 			icon: 'error',
 			text: 'El email ingresado ya se encuentra registrado',

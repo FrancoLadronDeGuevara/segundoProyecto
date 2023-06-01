@@ -30,21 +30,14 @@
                             <button id="botonUsuarios" class="btn btn-outline-primary text-sm-left text-center"
                                 style="border: none;">
                                 <i class="bi-people" style="font-size: 16px;"></i> <span
-                                    class="ms-1 d-none d-sm-inline">Usuarios</span>
-                            </button>
-                        </li>
-                        <li>
-                            <button id="botonFavoritos" class="btn btn-outline-primary text-sm-left text-center"
-                                style="border: none;">
-                                <i class="bi-heart" style="font-size: 16px;"></i> <span
-                                    class="ms-1 d-none d-sm-inline">Favoritos</span>
+                                    class="ms-1 d-none d-sm-inline">Lista de usuarios</span>
                             </button>
                         </li>
                         <li>
                             <button id="botonCanciones" class="btn btn-outline-primary text-sm-left text-center"
                                 style="border: none;">
                                 <i class="bi-music-note-list" style="font-size: 16px;"></i> <span
-                                    class="ms-1 d-none d-sm-inline">Canciones</span></button>
+                                    class="ms-1 d-none d-sm-inline">Lista de canciones</span></button>
                         </li>
                     </ul>
                     <div class="dropdown">
@@ -80,7 +73,7 @@
                 </div>
 
             </div>
-            <div class="container containerCanciones d-none">
+            <div class="container containerCanciones">
                 <div class="container-fluid tablaCanciones">
                     <table>
                         <thead>
@@ -92,6 +85,7 @@
                                 <th>ÁLBUM</th>
                                 <th>DURACIÓN</th>
                                 <th>NOMBRE</th>
+                                <th>URL</th>
                                 <th>EDITAR</th>
                                 <th>ELIMINAR</th>
                             </tr>
@@ -125,6 +119,9 @@
                     <div class="container grupo2 mt-3">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="duracionCancion" placeholder="minutos:segundos">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="urlCancion" placeholder="URL Spotify">
                         </div>
                         <div class="input-group mb-3">
                             <input type="file" class="form-control" id="imagenCancion">

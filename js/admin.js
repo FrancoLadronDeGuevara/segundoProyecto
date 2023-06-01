@@ -10,6 +10,8 @@ const formCancion = document.getElementById("formCancion");
 const btnActualizar = document.getElementById("actualizarCancion");
 const btnAgregar = document.getElementById("agregarCancion");
 
+window.addEventListener("load", verListaCanciones());
+
 if (!adminLogueado) {
     Swal.fire({
         icon: "error",
@@ -132,7 +134,8 @@ class Cancion {
         categoriaCancion,
         imagenCancion,
         duracionCancion,
-        nombreCancion
+        nombreCancion,
+        urlCancion
     ) {
         this.idCancion = idCancion;
         this.tituloCancion = tituloCancion;
@@ -141,6 +144,7 @@ class Cancion {
         this.imagenCancion = imagenCancion;
         this.duracionCancion = duracionCancion;
         this.nombreCancion = nombreCancion;
+        this.urlCancion = urlCancion;
     }
 }
 
@@ -152,7 +156,8 @@ let canciones = [
         "Pop",
         "../assets/album/monotonia.jpg",
         "2:28",
-        "Shakira ft. Ozuna - Monotonía"
+        "Shakira ft. Ozuna - Monotonía",
+        "https://open.spotify.com/embed/track/6G12ZafqofSq7YtrMqUm76?utm_source=generator"
     ),
     new Cancion(
         "5498472168",
@@ -161,7 +166,8 @@ let canciones = [
         "Pop",
         "../assets/album/balasperdidas.jpg",
         "2:28",
-        "Morat ft. Juanes - Besos en guerra"
+        "Morat ft. Juanes - Besos en guerra",
+        "https://open.spotify.com/embed/track/1mlGScrDQqHqmhdIqE8MmA?utm_source=generator"
     ),
     new Cancion(
         "5487454187",
@@ -171,7 +177,7 @@ let canciones = [
         "../assets/album/rr.jpg",
         "3:14",
         "Rosalia ft. Rauw Alejandro - Beso",
-        ""
+        "https://open.spotify.com/embed/track/609E1JCInJncactoMmkDon?utm_source=generator"
     ),
     new Cancion(
         "8795165184",
@@ -180,7 +186,8 @@ let canciones = [
         "Dance/Electrónica",
         "../assets/album/starboy.jpg",
         "4:20",
-        "The Weeknd - Die for you"
+        "The Weeknd - Die for you",
+        "https://open.spotify.com/embed/track/0SVfxv1GQdZjj0zkAKSE2h?utm_source=generator"
     ),
     new Cancion(
         "8751321845",
@@ -189,7 +196,8 @@ let canciones = [
         "Cumbia, Pop",
         "../assets/album/cupido.jpeg",
         "2:47",
-        "TINI - La Triple T"
+        "TINI - La Triple T",
+        "https://open.spotify.com/embed/track/7kYbxvrGXv8cmKjkqgqhrw?utm_source=generator"
     ),
     new Cancion(
         "0541950216",
@@ -198,7 +206,8 @@ let canciones = [
         "Urbano Latino",
         "../assets/album/unveranosinti.jpg",
         "3:33",
-        "Bad Bunny - Efecto"
+        "Bad Bunny - Efecto",
+        "https://open.spotify.com/embed/track/5Eax0qFko2dh7Rl2lYs3bx?utm_source=generator"
     ),
 ];
 
@@ -231,11 +240,11 @@ function verListaCanciones() {
             dataFila += `<td>${cancion.imagenCancion}</td>`;
             dataFila += `<td>${cancion.duracionCancion}</td>`;
             dataFila += `<td>${cancion.nombreCancion}</td>`;
+            dataFila += `<td>${cancion.urlCancion}</td>`;
             dataFila += `<td><button class="btn btn-warning" onclick="editarCancion(${i})"><i class="bi bi-pencil"></i></button></td>`;
             dataFila += `<td><button class="btn btn-danger" onclick="eliminarCancion(${i})"><i class="bi bi-trash"></i></button></td>`;
             dataFila += "</tr>";
         }
-
         document.getElementById("dataCanciones").innerHTML = dataFila;
     } else {
         localStorage.setItem("listaCanciones", JSON.stringify(canciones));
@@ -285,6 +294,7 @@ formCancion.addEventListener("submit", (e) => {
     const artista = document.getElementById("artistaCancion").value;
     const categoria = document.getElementById("generoCancion").value;
     const imagen = document.getElementById("imagenCancion").files[0].name;
+    const url = document.getElementById("urlCancion").value;
     const duracion = document.getElementById("duracionCancion").value;
     const nombre = document.getElementById("nombreCancion").value;
 
@@ -317,6 +327,7 @@ formCancion.addEventListener("submit", (e) => {
         artista != "" &&
         categoria != "" &&
         imagen != "" &&
+        url != "" &&
         duracion != "" &&
         nombre != ""
     ) {
@@ -330,6 +341,7 @@ formCancion.addEventListener("submit", (e) => {
             imagenCancion: `../assets/album/${imagen}`,
             duracionCancion: `${duracion}`,
             nombreCancion: nombre,
+            urlCancion: url,
         });
         localStorage.setItem("listaCanciones", JSON.stringify(listaCanciones));
 
@@ -379,6 +391,8 @@ function editarCancion(cancion) {
         listaCanciones[cancion].duracionCancion);
     let nombre = (document.getElementById("nombreCancion").value =
         listaCanciones[cancion].nombreCancion);
+    let url = (document.getElementById("urlCancion").value =
+        listaCanciones[cancion].urlCancion);
 
     btnActualizar.addEventListener("click", () => {
         if (
@@ -387,7 +401,8 @@ function editarCancion(cancion) {
             artista != "" &&
             categoria != "" &&
             duracion != "" &&
-            nombre != ""
+            nombre != "" &&
+            url != ""
         ) {
             listaCanciones.splice(cancion, 1);
 
@@ -397,6 +412,7 @@ function editarCancion(cancion) {
             categoria = document.getElementById("generoCancion").value;
             duracion = document.getElementById("duracionCancion").value;
             nombre = document.getElementById("nombreCancion").value;
+            url = document.getElementById("urlCancion").value;
 
             listaCanciones.push({
                 idCancion: id,
@@ -406,6 +422,7 @@ function editarCancion(cancion) {
                 imagenCancion: `${listaCanciones[cancion].imagenCancion}`,
                 duracionCancion: `${duracion}`,
                 nombreCancion: nombre,
+                urlCancion: url,
             });
             localStorage.setItem("listaCanciones", JSON.stringify(listaCanciones));
 

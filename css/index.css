@@ -105,31 +105,15 @@ html {
 }
 
 .seccionComentarios {
+    color: white;
     background-color: #09090A;
     border-radius: 10px;
     text-align: center;
-    height: 60vh;
+
 }
 
 /***************************/
 /*  FIN SECCION PRINCIPAL  */
-/***************************/
-
-
-/***************************/
-/*       FAVORITOS         */
-/***************************/
-.seccionFavoritos {
-    background-color: #09090A;
-    margin: 1rem 0;
-    border-radius: 10px;
-    padding: 1rem;
-    animation: fadeInUp;
-    animation-duration: .5s;
-}
-
-/***************************/
-/*      FIN FAVORITOS      */
 /***************************/
 
 
@@ -337,9 +321,16 @@ html {
 .reproductor{
     position: sticky;
     bottom: 0;
+    height: 20vh;
+    background-color: #282828;
+    z-index: 3;
 }
 
 #contenidoPrincipal{
     animation: backInLeft;
     animation-duration: .5s;
+}
+
+.listaCancionesReproductor{
+    overflow: auto;
 }
