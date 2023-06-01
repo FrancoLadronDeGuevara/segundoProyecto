@@ -1,0 +1,20 @@
+table, td, th{
+    border: black solid 1px;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+}
+
+.containerCanciones table th{
+    font-size: 6px;
+}
+
+.containerCanciones table td{
+    font-size: 10px;
+}
+
+.tablaCanciones, .tablaUsuarios{
+    overflow-x: scroll;
+}

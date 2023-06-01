@@ -1,59 +1,48 @@
 * {
 	box-sizing: border-box;
-    color: white;
+	color: white;
 }
 
 body {
 	font-family: 'Roboto', sans-serif;
-	background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 55%, rgba(9,9,78,1) 83%, rgba(32,46,156,1) 100%); 
+	background: rgb(2, 0, 36);
+	background: radial-gradient(circle, rgba(2, 0, 36, 1) 55%, rgba(9, 9, 78, 1) 83%, rgba(32, 46, 156, 1) 100%);
 }
 
-
 main {
-
+	display: flex;
+	justify-content: center;
 	animation: fadeInLeft;
 	animation-duration: 1s;
 	padding: 0.5rem 1rem;
+	width: 100%;
 }
 
 /***************************/
 /*           FORM          */
 /***************************/
-.titulo-flecha{
+.titulo-flecha {
 	font-size: 2rem;
 }
 
-
 .formulario {
-    display: flex;
-    flex-direction: column;
-	padding: 1rem;
-	border: 2px solid aliceblue;
-	border-radius: 5px;
-	margin:3rem 5rem ;
-	background-color: #0f0f0f83;
-	/* gap: 1rem; */
-}
-
-.mensajes-ayuda{
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
-	margin-top: 2rem;
+	padding: 1rem;
+	border: 2px solid rgb(148, 149, 150);
+	border-radius: 5px;
+	background-color: #0f0f0f83;
+	width: 70%;
 }
 
-.formulario:hover{
+.formulario:hover {
 	box-shadow: 5px 0px 45px rgba(31, 56, 199, 0.877);
 }
 
-
-
 .formulario__label {
 	display: block;
-	font-weight: 700;
-	padding: 10px;
-	cursor: pointer;
+	font-weight: 1rem;
+	padding: 1rem;
 }
 
 .formulario__grupo-input {
@@ -61,11 +50,15 @@ main {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+}
 
+#grupo__terminos {
+	text-align: center;
+	margin-top: 1rem;
 }
 
 .formulario__input {
-	width: 100%;
+	width: 90%;
 	background: #97959523;
 	border: 3px solid transparent;
 	border-radius: 3px;
@@ -73,12 +66,13 @@ main {
 	line-height: 45px;
 	padding: 0 40px 0 10px;
 	transition: .3s ease all;
+	cursor: pointer;
 }
 
 .formulario__input:focus {
-	border: 3px solid #0077ff71;
+	border: 3px solid #0075FF;
 	outline: none;
-	box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.123);
+	box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
 }
 
 .formulario__input-error {
@@ -87,17 +81,12 @@ main {
 	display: none;
 }
 
+.parrafo {
+	text-align: center;
+}
+
 .formulario__input-error-activo {
 	display: block;
-}
-
-.formulario_contraseña{
-	color: #0075FF;
-}
-
-.formulario_registrarse{
-	color: #0075FF;
-	text-decoration: none;
 }
 
 .formulario__validacion-estado {
@@ -111,6 +100,11 @@ main {
 
 .formulario__checkbox {
 	margin-right: 10px;
+}
+
+.formulario_iniciar_sesion {
+	color: #0075FF;
+	text-decoration: none;
 }
 
 .formulario__mensaje {
@@ -137,10 +131,10 @@ main {
 }
 
 .formulario__btn {
-    margin-top: 1.5rem;
+	margin-top: 1.5rem;
 	height: 45px;
 	line-height: 45px;
-	width: 10rem;
+	width: 30%;
 	background: #0907636c;
 	color: #fff;
 	font-weight: bold;
@@ -148,11 +142,12 @@ main {
 	border-radius: 3px;
 	cursor: pointer;
 	transition: .1s ease all;
+	margin: 2rem 0;
 }
 
 .formulario__btn:hover {
-	-webkit-box-shadow: 0px 0px 9px 1px #fff8f865; 
-box-shadow: 0px 0px 9px 1px #fff8f87e;;
+	-webkit-box-shadow: 0px 0px 9px 1px #fff8f865;
+	box-shadow: 0px 0px 9px 1px #fff8f87e;
 }
 
 .formulario__mensaje-exito {
@@ -190,19 +185,23 @@ box-shadow: 0px 0px 9px 1px #fff8f87e;;
 
 
 /***************************/
-/*    MEDIA QUERY (594px)   */
+/*    MEDIA QUERY (648px)   */
 /***************************/
-/* ------- MediaQuerys ------ */
-
-@media(max-width:594px){
-	.titulo-flecha{
+@media(max-width:648px) {
+	.titulo-flecha {
 		font-size: 1.5rem;
 	}
-	.formulario{
+
+	.formulario {
 		width: 100%;
-		margin: 6rem 0rem;
+		margin: 1rem 1rem 1rem 1;
 	}
-	label{
+
+	.formulario__label {
+		font-size: 1rem;
+	}
+
+	label {
 		font-size: 0.8rem;
 	}
 }
@@ -210,29 +209,29 @@ box-shadow: 0px 0px 9px 1px #fff8f87e;;
 /***************************/
 /*    MEDIA QUERY (474px)   */
 /***************************/
-@media(max-width:474px){
-	.titulo-flecha{
-		font-size: 1rem;
-	}
-
-	.formulario__btn{
-		width: 5rem;
-	}
-
-	i{
+@media(max-width:474px) {
+	.titulo-flecha {
 		font-size: 1.2rem;
 	}
 
-	.formulario{
+	i {
+		font-size: 1rem;
+	}
+
+	form {
 		width: 100%;
-		margin: 3rem 0rem;
-    }
+		margin: 1rem 1rem 1rem 1;
+	}
 
-    .mensajes-ayuda{
-	    font-size: 0.8rem;
-    }
+	.mensajes-ayuda {
+		font-size: 0.8rem;
+	}
 
-    label{
-	    font-size: 0.6rem;
-    }
+	.formulario__label {
+		font-size: 0.8rem;
+	}
+
+	label {
+		font-size: 0.6rem;
+	}
 }

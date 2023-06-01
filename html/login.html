@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio De Sesion</title>
+
+  <link rel="icon" type="image/png" href="../assets/logo/logoSSblack.png">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://kit.fontawesome.com/cf155cf13e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <main>
+
+    <!-- FORM -->
+    <form action="" class="formulario" id="formulario">
+
+    <!-- Título del 'FORM' -->
+    <div class="titulo-flecha">
+      <a href="../index.html" title="Volver a Inicio"><i class="fa-solid fa-arrow-left"></i></a>
+      <p style="text-align: center;"> Inicia Sesión en SoundStream</p>
+      <hr>
+    </div>
+
+    <!-- Grupo: Correo Electronico -->
+    <div class="formulario__grupo" id="grupo__correo">
+      <label for="correo" class="formulario__label">Correo Electrónico</label>
+      <div class="formulario__grupo-input">
+        <i class="fa-regular fa-envelope fa-2x" style="font-size: 1.5rem;margin-right: 10px;"></i>
+        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com" required>
+      </div>
+      <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+    </div>
+
+    <!-- Grupo: Contraseña -->
+    <div class="formulario__grupo" id="grupo__password">
+      <label for="password" class="formulario__label">Contraseña</label>
+      <div class="formulario__grupo-input">
+        <i class="fa-solid fa-lock fa-2x" style="font-size: 1.5rem;margin-right: 10px;"></i>
+        <input type="password" class="formulario__input" name="password" id="password" placeholder="ingrese su contraseña" required>
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+      </div>
+      <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+    </div>
+
+    <!-- Grupo: ¿Olvidaste tu contraseña?. Reegistrate Acá -->
+    <div class="mensajes-ayuda">
+      <a class="formulario_contraseña" href="./error404.html">¿Olvidaste tu contraseña?</a>
+      <p>¿No tienes usuario?<a class="formulario_registrarse" href="./registro.html"> Registrate Acá</a></p>
+    </div>
+
+    <!-- Botón ENVIAR del 'FORM' -->
+    <div class="formulario__grupo formulario__grupo-btn-enviar">
+      <button type="submit" class="formulario__btn">ENVIAR</button>
+    </div>
+    </form>
+    <!-- FIN FORM -->
+
+  </main>
+
+  <!-- SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://use.fontawesome.com/c2813ccf5b.js"></script>
+  <script src="../js/login.js"></script>
+  <!-- FIN SCRIPT -->
+
+</body>
+
+</html>

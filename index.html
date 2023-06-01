@@ -10,19 +10,19 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/cf155cf13e.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="body">
-    <!--HEADER-->
-    <header class="container-fluid p-0">
+
+    <header class="sticky-top">
         <!--NAVBAR-->
-        <nav class="navbar navbar-expand-md p-0" id="navBarPrincipal">
+        <nav class="navbar navbar-expand-md px-3" id="navBarPrincipal">
             <div class="container-fluid d-flex">
 
-                <a class="navbar-brand" href="#">
-                    <img src="assets/logo/logoSS.png" alt="logoSoundStream" width="120" height="90">
+                <a class="d-flex justify-content-center pt-2" href="index.html">
+                    <img src="assets/logo/logoSS.png" alt="logoSoundStream" width="100" height="80">
                 </a>
 
                 <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
@@ -33,11 +33,17 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item mx-3 my-3">
-                            <a class="nav-link btn btn-outline-light" href="#">Panel Admin</a>
+                        <li class="nav-item mx-3 my-3 d-none" id="btnAdmin">
+                            <a href="./html/admin.html" class="btn btn-primary w-100">Panel admin</a>
                         </li>
-                        <li class="nav-item mx-3 my-3">
-                            <a class="nav-link btn btn-outline-light" href="#">Iniciar Sesión</a>
+                        <li class="nav-item mx-3 my-3" id="btnIniciarSesion">
+                            <a href="./html/login.html" class="btn btn-outline-light w-100">Iniciar sesión</a>
+                        </li>
+                        <li class="nav-item mx-3 my-3" id="btnRegistrarse">
+                            <a href="./html/registro.html" class="btn btn-primary w-100">Registrarse</a>
+                        </li>
+                        <li class="nav-item mx-3 my-3 d-none" id="btnCerrarSesion">
+                            <button class="btn btn-danger w-100">Salir</button>
                         </li>
                     </ul>
                 </div>
@@ -45,289 +51,257 @@
         </nav>
         <!--FIN NAVBAR-->
     </header>
-    <!--FIN HEADER-->
 
-    <main class="container-fluid p-0 d-flex">
-        <!--SECCION PRINCIPAL-->
-        <section class="container-fluid col-10">
-            <!--SECCION TITULO-->
-            <article class="seccionTitulo container my-5 d-flex flex-column">
-                <h1 class="text-white display-1 font-weight-bold" id="tituloPrincipal">SoundStream</h1>
-                <h2 class="text-white eslogan">Tu música, en todas partes</h2>
-                <a href="#" class="btn btn-light w-25 botonRegistro">Registrarse ahora</a>
-            </article>
-            <!--FIN SECCION TITULO-->
+    <main id="contenidoPrincipal">
 
-            <!--SECCION FAVORITOS-->
-            <article class="seccionFavoritos container my-5">
-                <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <h2 class="text-white text-center">Lo más escuchado hoy!</h2>
-                        <div class="carousel-item active" data-bs-interval="5000">
-                            <div class="row text-center">
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <div class="row text-center">
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <div class="row text-center">
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-4 col-md">
-                                    <div class="div-carousel">
-                                        <a href="#">
-                                            <img src="assets/album/albumEJ.jpg" class="poster-carousel w-50"
-                                                alt="album">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <!--FIN SECCION FAVORITOS-->
+    
+    <!--SECCION TITULO-->
+    <article class="seccionTitulo container d-flex flex-column">
+        <h1 class="text-white font-weight-bold" id="tituloPrincipal">SoundStream</h1>
+        <h2 class="text-white eslogan">es <span class="animacionTextoSoundStream"></span><span
+                class="cursorAnimacionTexto"> </span></h2>
+    </article>
+    <!--FIN SECCION TITULO-->
 
-            <!--SECCION INFORMACION-->
-            <article class="seccionInfo container p-0 d-flex justify-content-between my-5">
-                <div class="card" style="width: 20rem;">
-                    <img src="assets/logo/escuchandomusica.jpeg" class="card-img-top h-100" alt="...">
-                    <h5 class="card-title">Tus canciones en todos tus dispositivos, en cualquier momento</h5>
-                    <p class="card-text">Conectá todos tus dispositivos a la misma vez y disfrutá de toda la música de
-                        SoundStream.</p>
-                    <a href="#" class="botonCard text-center">Ver más></a>
-                    <span class="bgCard"></span>
-                </div>
-                <div class="card" style="width: 20rem;">
-                    <img src="assets/logo/listadereproduccion.jpg" class="card-img-top h-100" alt="...">
-                    <h5 class="card-title">Crea tu lista de reproducción y escuchá desde cualquier dispositivo</h5>
-                    <p class="card-text">Elegí tus canciones para escucharlas con el mejor sonido de alta fidelidad y
-                        sin
-                        publicidades.</p>
-                    <a href="#" class="botonCard">Ver más></a>
-                    <span class="bgCard"></span>
-                </div>
-                <div class="card" style="width: 20rem;">
-                    <img src="assets/logo/descargando.jpg" class="card-img-top" alt="...">
-                    <h5 class="card-title">Escuchá tus canciones en modo desconectado</h5>
-                    <p class="card-text">SoundStream te ofrece descargar tus canciones con un solo click y desde
-                        cualquier
-                        dispositivo.</p>
-                    <a href="#" class="botonCard">Ver más></a>
-                    <span class="bgCard"></span>
-                </div>
-            </article>
-            <!--FIN SECCION INFORMACION-->
+    <!--SECCION BUSQUEDA Y TRENDINGS-->
+    <article class="container my-5">
+        <h5 class="text-white text-center"><i>Buscá tus canciones favoritas para escucharlas o agregarlas a tu playlist</i></h5>
+        <div class="container d-flex justify-content-center">
+            <input type="search" class="form-control w-50" id="barraBusqueda" placeholder="Artistas, canciones" disabled>
+            <button class="btn btn-primary" id="btnBusqueda"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="container-fluid row my-5 d-flex justify-content-center align-items-center" id="contenedorCanciones">
+            <div id="modalCancion"></div>
+        </div>
 
-            <!--SECCION CALIDAD DE SONIDO-->
-            <article class="seccionSonido container d-flex align-items-center justify-content-between p-3 my-5">
-                <div>
-                    <h4>Descubre formatos de audio innovadores</h4>
-                    <p>Añade una nueva dimensión a tu música</h2>
-                    <h6> + Calidad de sonido</h2>
-                </div>
-                <div>
-                    <img src="assets/logo/dolby.png" class="img-fluid logoSonido my-5" width="90" height="70" alt="">
-                    <img src="assets/logo/mqa.png" class="img-fluid mx-5 logoSonido" width="50" height="70" alt="">
-                    <img src="assets/logo/reality.png" class="img-fluid logoSonido" width="100" height="70" alt="">
-                </div>
-            </article>
-            <!--FIN SECCION CALIDAD DE SONIDO-->
+        </div>
+    </article>
+    <!--FIN SECCION BUSQUEDA Y TRENDINGS-->
+    <div class="mostrarCard"></div>
+    <!--SECCION INFORMACION-->
+    <article class="container p-0 my-5 d-flex justify-content-between align-items-center flex-column flex-md-row ">
+        <div class="card cardInfo" style=" width: 18rem">
+            <img src="assets/logo/escuchandomusica.jpeg" class="card-img-top h-100" alt="...">
+            <h5 class="card-title cardInfoTitulo">Tus canciones en todos tus dispositivos, en cualquier momento</h5>
+            <p class="card-text cardInfoText">Conectá todos tus dispositivos a la misma vez y disfrutá de toda la música de
+                SoundStream.</p>
+            <a href="./html/error404.html" class="botonCard text-center">Ver más></a>
+            <span class="bgCard"></span>
+        </div>
+        <div class="card cardInfo" style="width: 18rem;">
+            <img src="assets/logo/listadereproduccion.jpg" class="card-img-top h-100" alt="...">
+            <h5 class="card-title cardInfoTitulo">Crea tu lista de reproducción y escuchá desde cualquier dispositivo</h5>
+            <p class="card-text cardInfoText">Elegí tus canciones para escucharlas con el mejor sonido de alta fidelidad y
+                sin
+                publicidades.</p>
+            <a href="./html/error404.html" class="botonCard">Ver más></a>
+            <span class="bgCard"></span>
+        </div>
+        <div class="card cardInfo" style="width: 18rem;">
+            <img src="assets/logo/descargando.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title cardInfoTitulo">Escuchá tus canciones en modo desconectado</h5>
+            <p class="card-text cardInfoText">SoundStream te ofrece descargar tus canciones con un solo click y desde
+                cualquier
+                dispositivo.</p>
+            <a href="./html/error404.html" class="botonCard">Ver más></a>
+            <span class="bgCard"></span>
+        </div>
+    </article>
+    <!--FIN SECCION INFORMACION-->
 
-            <!--SECCION COMENTARIOS-->
-            <article class="seccionComentarios container">
-                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner p-5">
-                        <div class="carousel-item active" data-bs-interval="5000">
-                            <h2 class="display-4 mb-5 font-weight-bold">"Estamos frente a una de las mejores plataformas
-                                de streaming de música en la actualidad.-"
-                            </h2>
-                            <p><i>-Satya Nadella (CEO de Microsoft)</i></p>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <h2 class="display-4 mb-5">"El solo hecho de dejarme crear mi lista de reproducción y
-                                escucharla sin conexión, es una
-                                pasada.-"</h2>
-                            <p><i>-René "Residente" Pérez (Cantante)</i></p>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <h2 class="display-4 mb-5">"SoundStream se convirtió en mi plataforma de música favorita. La
-                                tengo en todos mis dispositivos-"</h2>
-                            <p><i>-Scarlett Johanson (Actriz)</i></p>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <h2 class="display-4 mb-5">"La mejor plataforma que existe! <br> Gratis <br> Y sin
-                                publicidad!"</h2>
-                            <p><i>-Ricardo Darin (Actor)</i></p>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <h2 class="display-4 mb-5">"Tengo creada una lista con todos mis hits que escucho todos los
-                                días. SoundStream es lo más!.-"</h2>
-                            <p><i>-Shakira (Cantante)</i></p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <!--FIN SECCION COMENTARIOS-->
-        </section>
+    <!--SECCION CALIDAD DE SONIDO-->
+    <article class="seccionSonido container d-flex align-items-center justify-content-between p-3 my-5">
+        <div>
+            <h4>Descubre formatos de audio innovadores</h4>
+            <p>Añade una nueva dimensión a tu música</h2>
+            <h6> + Calidad de sonido</h2>
+        </div>
+        <div>
+            <img src="assets/logo/dolby.png" class="img-fluid logoSonido my-5" width="90" height="70" alt="">
+            <img src="assets/logo/mqa.png" class="img-fluid mx-5 logoSonido" width="50" height="70" alt="">
+            <img src="assets/logo/reality.png" class="img-fluid logoSonido" width="100" height="70" alt="">
+        </div>
+    </article>
+    <!--FIN SECCION CALIDAD DE SONIDO-->
 
-        <!--INICIO ASIDE-->
-        <aside class="container-fluid col-2 aside">
-            <div class="container p-4 pt-4">
-                <div class="d-flex justify-content-between">
-                    <a href="index.html/#tituloPrincipal" class="linkAside">Inicio</a>
-                    <i class="bi bi-house"></i>
+    <!--SECCION COMENTARIOS-->
+    <article class="seccionComentarios container my-5">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner p-5">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <h2 class="mb-5">"Estamos frente a una de las mejores plataformas
+                        de streaming de música en la actualidad.-"
+                    </h2>
+                    <p><i>-Satya Nadella (CEO de Microsoft)</i></p>
                 </div>
-                <div class="d-flex justify-content-between my-3">
-                    <a href="#" class="linkAside">Busqueda</a>
-                    <i class="bi bi-search"></i>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <h2 class="mb-5">"El solo hecho de dejarme crear mi lista de reproducción y
+                        escucharla sin conexión, es una
+                        pasada.-"</h2>
+                    <p><i>-René "Residente" Pérez (Cantante)</i></p>
                 </div>
-                <div class="d-flex justify-content-between my-3">
-                    <a href="#" class="linkAside">Favoritos</a>
-                    <i class="bi bi-star"></i>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <h2 class="mb-5">"SoundStream se convirtió en mi plataforma de música favorita. La
+                        tengo en todos mis dispositivos-"</h2>
+                    <p><i>-Scarlett Johanson (Actriz)</i></p>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <h2 class="mb-5">"La mejor plataforma que existe! <br> Gratis <br> Y sin
+                        publicidad!"</h2>
+                    <p><i>-Ricardo Darin (Actor)</i></p>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <h2 class="mb-5">"Tengo creada una lista con todos mis hits que escucho todos los
+                        días. SoundStream es lo más!.-"</h2>
+                    <p><i>-Shakira (Cantante)</i></p>
                 </div>
             </div>
-        </aside>
-        <!--FIN ASIDE-->
+        </div>
+    </article>
+    <!--FIN SECCION COMENTARIOS-->
+
+
+
+    <section class="accordion accordion-flush container my-5 w-100" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed w-100 btn-outline-light rounded" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                    aria-controls="flush-collapseOne">
+                    ¿Qué es SoundStream?
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body p-3">SoundStream es un servicio de streaming que te permite escuchar más de
+                    100
+                    millones de canciones. Puedes descargar tus temas favoritos y reproducirlos sin conexión, escuchar
+                    música en todos tus dispositivos, descubrir
+                    novedades según tus gustos musicales, disfrutar playlists creadas por nuestros editores y mucho más.
+                    Por si esto fuera poco, también tienes acceso a contenido exclusivo y original.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed btn-outline-light rounded w-100" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                    aria-controls="flush-collapseTwo">
+                    ¿Cuánto cuesta el servicio de SoundStream?
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body p-3">El servicio de SoundStream es totalmente gratuito y sin publicidad!
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed w-100 btn-outline-light rounded" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false"
+                    aria-controls="flush-collapseThree">
+                    ¿Qué es el formato Dolby Atmos y cómo puedo escuchar música en ese formato?
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body p-3">Dolby Atmos es una tecnología de audio que te pone en el centro de una
+                    experiencia auditiva envolvente.
+
+                    Podes disfrutar miles de canciones en formato Dolby Atmos con los
+                    audífonos que quieras. Si usas audífonos compatibles, las canciones se reproducen
+                    automáticamente en Dolby Atmos si están disponibles en ese formato. Lo mismo sucede con la
+                    mayoría de audífonos Bluetooth. También puedes escuchar música en Dolby Atmos a través de las
+                    bocinas integradas de los modelos compatibles o uno de los siguientes dispositivos: una barra de
+                    sonido
+                    compatible con Dolby Atmos, un receptor AV compatible con Dolby Atmos o un televisor compatible
+                    con audio Dolby Atmos.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed w-100 btn-outline-light rounded" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false"
+                    aria-controls="flush-collapseFour">
+                    ¿Cómo puedo escuchar música sin conexión o crear mis listas de reproducción?
+                </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body p-3">Sólo necesitas <a href="./html/registro.html">registrarte</a> en
+                    SoundSTream o si ya lo estás, <a href="./html/login.html">inicia sesión</a> para disfrutar de tu
+                    música favorita.
+                </div>
+            </div>
+        </div>
+    </section>
 
     </main>
-    <!--FIN MAIN-->
 
     <!--INICIO FOOTER-->
-    <footer class="pie-pagina">
 
-        <!-- Fila 1 -->
-        <div class="grupo-1">
+    <footer class="container col-12 pt-2 px-5 text-white">
+        <div class="container d-flex justify-content-between flex-column flex-sm-row text-center">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./assets/logo/logoSS.png" class="img-fluid" alt="Logo de página" width="150" height="130">
+                </a>
 
-            <!-- Box 1 -->
-            <div class="box">
-                <div class="box-1">
-                    
-                        <a href="#">
-                            <img src="./assets/logo/logoSS.png" alt="Logo de página">
-                        </a>
-                    
+            </div>
+
+            <div class="contacto">
+                <h2>Contacto</h2>
+                <div class="d-flex flex-column">
+                    <a class="linksFooter" onclick="loadContent('./html/acerca.html')">Sobre Nosotros</a>
+                    <a class="linksFooter" onclick='window.location.href="./html/error404.html"'>Soporte</a>
+                    <a class="linksFooter" id="botonPolitica" onclick="loadContent('./html/politica.html')">Política de Privacidad</a>
+                    <a class="linksFooter" id="botonTerminos" onclick="loadContent('./html/terminos.html')">Términos y Condiciones</a>
                 </div>
             </div>
 
-            <!-- Box 2 -->
-            <div class="box">
-                <div class="box-2">
-                <h2>Nuestra Compañia</h2>
-                    <div class="empresa">
-                        <a class="links-empresa" href="../Error/index.html">Sobre Nosotros</a><br>
-                        <a class="links-empresa" href="../Error/index.html">Administración</a><br>
-                        <a class="links-empresa" href="../Error/index.html">Precios y Planes</a><br>
-                        <a class="links-empresa" href="../Error/index.html">Transferencia de Música</a><br>
-                        <a class="links-empresa" href="../Error/index.html">Soporte</a><br>
-                        <a class="links-empresa" href="../Error/index.html">Empleo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Box 3 -->
-            <div class="box">
-                <div class="box-3">
+            <div class="lugar">
                 <h2>Nuestro Lugar</h2>
-                <p>Rolling Code</p>
-                <p>General Paz 576</p>
-                <p>Tucumán 4000</p>
-                <p>T: (381) 578 3030</p>
-                <p>rollingcode@gmail.com</p>
-                </div>
+                <p class="m-0">General Paz 576</p>
+                <p class="m-0">Tucumán 4000</p>
+                <p class="m-0">T: (381) 578 3030</p>
+                <p class="m-0">rollingcode@gmail.com</p>
             </div>
 
-            <!-- Box 4 -->
-            <div class="box">
-                <div class="box-4">
+            <div class="redes">
                 <h2>Síguenos</h2>
                 <div class="red-social">
-                    <a href="https://es-la.facebook.com/"><i class="bi bi-facebook"></i></a>
-                    <a href="https://twitter.com/?lang=es"><i class="bi bi-twitter"></i></a>
-                    <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
-                    <a href="https://github.com/"><i class="bi bi-github"></i></a>
-                    <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
-                </div> 
+                    <a href="https://es-la.facebook.com/" target="_blank"><i
+                            class="bi bi-facebook redes-sociales"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i
+                            class="bi bi-instagram redes-sociales"></i></a>
+                    <a href="https://github.com/" target="_blank"><i class="bi bi-github redes-sociales"></i></a>
                 </div>
             </div>
         </div>
-        <hr>
 
-        <!-- Fila 2 -->
-        <div class="grupo-2">
-            <div class="copyright"><div>&copy; 2023 <b>Grupo-1, <a class="rolling" href="https://rollingcodeschool.com/">Rolling Code</a> - Todos los Derechos Reservados.</b></div></div>
-            <div><a class="privacion" href="../Privacion/index.html"> Privación y Política</a> | <a class="terminos" href="../Terminos/Condiciones/index.html">Términos y Condiciones</a></div>
+        <hr class="border border-light">
+
+        <div class="container-fluid text-center">
+            <div>&copy; 2023 <b>Grupo-1, <a class="linksFooter" href="https://rollingcodeschool.com/">Rolling
+                        Code</a> - Todos los Derechos Reservados.</b>
+            </div>
         </div>
     </footer>
-
     <!--FIN FOOTER-->
+
+    <section class="container-fluid text-white reproductor d-none flex-column flex-md-row justify-content-center">
+        <div class="reproduciendo w-100 align-self-center">
+            <div id="audio-player">
+                <iframe style="border-radius:12px" id="frameSpotify" width="80%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="listaCancionesReproductor w-75 pt-2">
+
+        </div>
+    </section>
+    
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/index.js"></script>
 
 </html>
