@@ -273,6 +273,8 @@ inputBusqueda.addEventListener("keyup", filtrar);
 
 function reproducirCancion(idCancion) {
     verificarLogueo("Registrate para escuchar tus canciones favoritas!");
+    document.querySelector('.patrocinador').classList.remove('position-absolute');
+    document.querySelector('.patrocinador').classList.add('d-none');
     const cancion = canciones.find((song)=> song.idCancion == idCancion);
     console.log(cancion)
     document.getElementById('frameSpotify').setAttribute('src', `${cancion.urlCancion}`)
@@ -308,7 +310,7 @@ function verDetalle(idCancion) {
 const playlistUsuario = JSON.parse(localStorage.getItem('playlist')) || [];
 
 if(playlistUsuario.length == 0){
-    mostrarPlaylist.innerHTML = '<p class="text-center mt-3"><i>Todavia no hay canciones agregadas</i></p>';
+    mostrarPlaylist.innerHTML = '<p class="text-center w-100 mx-auto"><i>Todavia no hay canciones agregadas</i></p>';
 }
 if(playlistUsuario.length > 0){
     verPlaylist()
@@ -317,18 +319,18 @@ if(playlistUsuario.length > 0){
 function verPlaylist(){
         mostrarPlaylist.innerHTML = '';
         if (playlistUsuario.length == 0) {
-            mostrarPlaylist.innerHTML = '<p class="text-center mt-3"><i>Todavia no hay canciones agregadas</i></p>';
+            mostrarPlaylist.innerHTML = '<p class="text-center"><i>Todavia no hay canciones agregadas</i></p>';
         }
         if (playlistUsuario.length > 0) {
             for (const i in playlistUsuario) {
                 let cancion = playlistUsuario[i];
                 mostrarPlaylist.innerHTML += `
             <hr class="m-0 p-0">
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center cancionPlaylist">
                 <div><small>${cancion.nombreCancion}</small></div>
                 <div>
-                    <button class="btn btn-outline-success pt-0 px-3" onclick="reproducirCancionPlaylist(${i})"><i class="bi bi-play-circle" style="font-size: 10px;"></i></button>
-                    <button class="btn btn-outline-danger pt-0 px-3" onclick="eliminarCancionPlaylist(${i})"><i class="bi bi-trash" style="font-size: 10px;"></i></button>
+                    <button class="btn btn-outline-success py-0 px-1" onclick="reproducirCancionPlaylist(${i})"><i class="bi bi-play-circle" style="font-size: 10px;"></i></button>
+                    <button class="btn btn-outline-danger py-0 px-1" onclick="eliminarCancionPlaylist(${i})"><i class="bi bi-trash" style="font-size: 10px;"></i></button>
                 </div>
             </div>
             `;
@@ -337,6 +339,8 @@ function verPlaylist(){
 }
 
 function reproducirCancionPlaylist(indexCancion){
+    document.querySelector('.patrocinador').classList.remove('position-absolute');
+    document.querySelector('.patrocinador').classList.add('d-none');
     document.getElementById('frameSpotify').setAttribute('src', `${playlistUsuario[indexCancion].urlCancion}`)
 }
 

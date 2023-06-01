@@ -10,7 +10,7 @@ html {
 /*          NAVBAR         */
 /***************************/
 #navBarPrincipal {
-    background-color: #09090A;
+    background-color: #09090a7d;
 }
 
 /***************************/
@@ -22,7 +22,7 @@ html {
 /***************************/
 .seccionPrincipal {
     animation: backInLeft;
-    animation-duration: .5s;
+    animation-duration: 0.5s;
 }
 
 .seccionTitulo {
@@ -47,7 +47,7 @@ html {
 
 .cardInfo:hover {
     box-shadow: white 0px 0px 20px;
-    transition: all ease-in-out .1s;
+    transition: all ease-in-out 0.1s;
 }
 
 .cardInfoTitulo {
@@ -96,7 +96,7 @@ html {
 }
 
 .seccionSonido {
-    background-color: #09090A;
+    background-color: #09090a;
     border-radius: 10px;
 }
 
@@ -106,16 +106,14 @@ html {
 
 .seccionComentarios {
     color: white;
-    background-color: #09090A;
+    background-color: #09090a;
     border-radius: 10px;
     text-align: center;
-
 }
 
 /***************************/
 /*  FIN SECCION PRINCIPAL  */
 /***************************/
-
 
 /***************************/
 /*         ACORDEON        */
@@ -138,24 +136,26 @@ html {
 /*      FIN ACORDEON       */
 /***************************/
 
-
-
 /***************************/
 /*         FOOTER          */
 /***************************/
 .footer {
-    background-color: #09090A;
+    background-color: #09090a;
 }
 
 .redes-sociales {
     font-size: 2rem;
     background-color: #18191f;
     color: #fff;
-    box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080, 2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080;
+    box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
+        2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
+        inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+        inset 2px 2px 10px #00000080;
     border-radius: 50%;
     padding: 1px 6px;
     animation: animate 3s linear infinite;
-    text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff, 0 0 200px #0072ff;
+    text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+        0 0 200px #0072ff;
 }
 
 .redes-sociales:hover {
@@ -175,28 +175,32 @@ html {
     animation-delay: 0.3s;
 }
 
-.linksFooter{
+.linksFooter {
     display: inline-block;
     position: relative;
     color: #ffffff;
     text-decoration: none !important;
     font-size: 16px !important;
 }
-.linksFooter:hover{
+
+.linksFooter:hover {
     cursor: pointer;
 }
+
 .linksFooter:after {
     content: "";
     display: block;
     margin: auto;
     height: 2px;
     width: 0px;
-    transition: all .8s;
+    transition: all 0.8s;
 }
+
 .linksFooter:hover:after {
     width: 100%;
     background: #fff;
 }
+
 /***************************/
 /*        FIN FOOTER       */
 /***************************/
@@ -211,7 +215,6 @@ html {
     }
 }
 
-/* AGUS */
 .artista {
     display: flex;
     flex-direction: column;
@@ -245,17 +248,13 @@ html {
 }
 
 .titulo-adn {
-    color: #E93232;
+    color: #e93232;
     font-weight: 600;
 }
-
-/* DETALLE - ARTISTAS */
 
 .titulo-artistas {
     color: aliceblue;
 }
-
-/* SHAKIRA */
 
 #titulo-foto-artista {
     position: absolute;
@@ -276,17 +275,7 @@ html {
     text-shadow: black 0px 0px 10px;
 }
 
-/* ARTISTAS */
-/* #accordionFlushExample {
-    width: 51.7vw;
-  } */
-
-/* .btn{
-    background-color: rgba(128, 128, 128, 0.541);
-    border: 1px solid white;
-    color:#ffffff
-  } */
-@media(min-width:320px) and (max-width:425px) {
+@media (min-width: 320px) and (max-width: 425px) {
     .cardInfo {
         margin: 20px;
     }
@@ -295,6 +284,10 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    #accordionFlushExample button{
+        font-size: 16px;
     }
 
     .seccionTitulo {
@@ -307,7 +300,7 @@ html {
     }
 }
 
-@media(min-width:425px) and (max-width:568px) {
+@media (min-width: 425px) and (max-width: 568px) {
     .seccionTitulo {
         background-image: url("../assets/logo/principal.jpg");
         background-size: cover;
@@ -316,21 +309,55 @@ html {
         border-radius: 10px;
         height: 50vh;
     }
+
+    #accordionFlushExample button{
+        font-size: 20px;
+    }
 }
 
-.reproductor{
+.reproductor {
     position: sticky;
     bottom: 0;
     height: 20vh;
-    background-color: #282828;
+    background-color: #28282872;
     z-index: 3;
 }
 
-#contenidoPrincipal{
+#contenidoPrincipal {
     animation: backInLeft;
-    animation-duration: .5s;
+    animation-duration: 0.5s;
 }
 
-.listaCancionesReproductor{
+.listaCancionesReproductor {
     overflow: auto;
+}
+
+.listaCancionesReproductor {
+    overflow: auto;
+    /*Firefox*/
+    overflow: overlay;
+    height: 100px;
+    width: 300px;
+}
+
+/*Webkit*/
+.listaCancionesReproductor::-webkit-scrollbar {
+    display: none;
+    width: 10px;
+    height: 10px;
+    background-color: lightblue;
+}
+
+.listaCancionesReproductor:hover::-webkit-scrollbar {
+    display: initial;
+}
+
+.listaCancionesReproductor::-webkit-scrollbar-thumb {
+    background-color: #09c;
+}
+
+.cancionPlaylist:hover {
+    animation: flash;
+    animation-duration: 1s;
+    box-shadow: white -5px 0px 1px;
 }

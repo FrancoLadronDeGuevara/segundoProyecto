@@ -10,7 +10,7 @@ const formCancion = document.getElementById("formCancion");
 const btnActualizar = document.getElementById("actualizarCancion");
 const btnAgregar = document.getElementById("agregarCancion");
 
-// window.addEventListener("load", verListaCanciones());
+window.addEventListener("load", verListaCanciones());
 
 if (!adminLogueado) {
     Swal.fire({
@@ -208,7 +208,7 @@ formCancion.addEventListener("submit", (e) => {
     const titulo = document.getElementById("tituloCancion").value;
     const artista = document.getElementById("artistaCancion").value;
     const categoria = document.getElementById("generoCancion").value;
-    const imagen = document.getElementById("imagenCancion").files[0].name;
+    const imagen = document.getElementById("imagenCancion").value;
     const url = document.getElementById("urlCancion").value;
     const duracion = document.getElementById("duracionCancion").value;
     const nombre = document.getElementById("nombreCancion").value;
@@ -243,6 +243,7 @@ formCancion.addEventListener("submit", (e) => {
         categoria != "" &&
         imagen != "" &&
         url != "" &&
+        imagen != "" &&
         duracion != "" &&
         nombre != ""
     ) {
@@ -253,7 +254,7 @@ formCancion.addEventListener("submit", (e) => {
             tituloCancion: titulo,
             artistaCancion: artista,
             categoriaCancion: categoria,
-            imagenCancion: `../assets/album/${imagen}`,
+            imagenCancion: imagen,
             duracionCancion: `${duracion}`,
             nombreCancion: nombre,
             urlCancion: url,
@@ -301,7 +302,7 @@ function editarCancion(cancion) {
         listaCanciones[cancion].categoriaCancion);
     let imagen = document
         .getElementById("imagenCancion")
-        .setAttribute("disabled", "");
+        .value = listaCanciones[cancion].imagenCancion;
     let duracion = (document.getElementById("duracionCancion").value =
         listaCanciones[cancion].duracionCancion);
     let nombre = (document.getElementById("nombreCancion").value =
@@ -311,13 +312,14 @@ function editarCancion(cancion) {
 
     btnActualizar.addEventListener("click", () => {
         if (
-            id != "" &&
-            titulo != "" &&
-            artista != "" &&
-            categoria != "" &&
-            duracion != "" &&
-            nombre != "" &&
-            url != ""
+            document.getElementById("inputId").value != "" &&
+            document.getElementById("tituloCancion").value != "" &&
+            document.getElementById("artistaCancion").value != "" &&
+            document.getElementById("generoCancion").value != "" &&
+            document.getElementById("duracionCancion").value != "" &&
+            document.getElementById("nombreCancion").value != "" &&
+            document.getElementById("urlCancion").value != "" &&
+            document.getElementById("imagenCancion").value != ""
         ) {
             listaCanciones.splice(cancion, 1);
 
@@ -328,13 +330,14 @@ function editarCancion(cancion) {
             duracion = document.getElementById("duracionCancion").value;
             nombre = document.getElementById("nombreCancion").value;
             url = document.getElementById("urlCancion").value;
+            imagen = document.getElementById("imagenCancion").value;
 
             listaCanciones.push({
                 idCancion: id,
                 tituloCancion: titulo,
                 artistaCancion: artista,
                 categoriaCancion: categoria,
-                imagenCancion: `${listaCanciones[cancion].imagenCancion}`,
+                imagenCancion: imagen,
                 duracionCancion: `${duracion}`,
                 nombreCancion: nombre,
                 urlCancion: url,
