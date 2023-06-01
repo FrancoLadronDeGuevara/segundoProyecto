@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item mx-3 my-3 d-none" id="btnAdmin">
-                            <a href="./html/admin.html" class="btn btn-primary w-100">Panel admin</a>
+                            <a href="./html/admin.html" class="btn btn-outline-light w-100">Panel admin</a>
                         </li>
                         <li class="nav-item mx-3 my-3" id="btnIniciarSesion">
                             <a href="./html/login.html" class="btn btn-outline-light w-100">Iniciar sesión</a>
@@ -43,7 +43,7 @@
                             <a href="./html/registro.html" class="btn btn-primary w-100">Registrarse</a>
                         </li>
                         <li class="nav-item mx-3 my-3 d-none" id="btnCerrarSesion">
-                            <button class="btn btn-danger w-100">Salir</button>
+                            <button class="btn btn-outline-danger w-100">Salir</button>
                         </li>
                     </ul>
                 </div>
@@ -110,7 +110,7 @@
     <!--FIN SECCION INFORMACION-->
 
     <!--SECCION CALIDAD DE SONIDO-->
-    <article class="seccionSonido container d-flex align-items-center justify-content-between p-3 my-5">
+    <article class="seccionSonido container d-flex align-items-center text-white justify-content-between p-3 my-5">
         <div>
             <h4>Descubre formatos de audio innovadores</h4>
             <p>Añade una nueva dimensión a tu música</h2>
@@ -127,7 +127,7 @@
     <!--SECCION COMENTARIOS-->
     <article class="seccionComentarios container my-5">
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner p-5">
+            <div class="carousel-inner p-1 p-md-5">
                 <div class="carousel-item active" data-bs-interval="5000">
                     <h2 class="mb-5">"Estamos frente a una de las mejores plataformas
                         de streaming de música en la actualidad.-"
@@ -162,7 +162,7 @@
 
 
 
-    <section class="accordion accordion-flush container my-5 w-100" id="accordionFlushExample">
+    <section class="accordion accordion-flush container my-5 w-100 text-white" id="accordionFlushExample">
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed w-100 btn-outline-light rounded" type="button"
@@ -287,13 +287,17 @@
     </footer>
     <!--FIN FOOTER-->
 
-    <section class="container-fluid text-white reproductor d-none flex-column flex-md-row justify-content-center">
+    <section class="container-fluid text-white reproductor d-none flex-column flex-md-row align-items-center justify-content-center">
         <div class="reproduciendo w-100 align-self-center">
             <div id="audio-player">
+                <div class="position-absolute text-center patrocinador">
+                    <p class="m-0"><i><small>Podés escuchar canciones de nuestro patrocinador n° 1</small></i></p>
+                    <p style="font-size: 2rem;"><i class="bi bi-spotify">Spotify</i></p>
+                </div>
                 <iframe style="border-radius:12px" id="frameSpotify" width="80%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen" loading="lazy"></iframe>
             </div>
         </div>
-        <div class="listaCancionesReproductor w-75 pt-2">
+        <div class="listaCancionesReproductor w-100 pt-2">
 
         </div>
     </section>
