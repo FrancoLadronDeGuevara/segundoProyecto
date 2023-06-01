@@ -10,7 +10,7 @@ const formCancion = document.getElementById("formCancion");
 const btnActualizar = document.getElementById("actualizarCancion");
 const btnAgregar = document.getElementById("agregarCancion");
 
-window.addEventListener("load", verListaCanciones());
+// window.addEventListener("load", verListaCanciones());
 
 if (!adminLogueado) {
     Swal.fire({
@@ -126,90 +126,7 @@ btnCanciones.addEventListener("click", () => {
     verListaCanciones();
 });
 
-class Cancion {
-    constructor(
-        idCancion,
-        tituloCancion,
-        artistaCancion,
-        categoriaCancion,
-        imagenCancion,
-        duracionCancion,
-        nombreCancion,
-        urlCancion
-    ) {
-        this.idCancion = idCancion;
-        this.tituloCancion = tituloCancion;
-        this.artistaCancion = artistaCancion;
-        this.categoriaCancion = categoriaCancion;
-        this.imagenCancion = imagenCancion;
-        this.duracionCancion = duracionCancion;
-        this.nombreCancion = nombreCancion;
-        this.urlCancion = urlCancion;
-    }
-}
 
-let canciones = [
-    new Cancion(
-        "3215865168",
-        "Monotonía",
-        "Shakira",
-        "Pop",
-        "../assets/album/monotonia.jpg",
-        "2:28",
-        "Shakira ft. Ozuna - Monotonía",
-        "https://open.spotify.com/embed/track/6G12ZafqofSq7YtrMqUm76?utm_source=generator"
-    ),
-    new Cancion(
-        "5498472168",
-        "Besos en Guerra",
-        "Morat",
-        "Pop",
-        "../assets/album/balasperdidas.jpg",
-        "2:28",
-        "Morat ft. Juanes - Besos en guerra",
-        "https://open.spotify.com/embed/track/1mlGScrDQqHqmhdIqE8MmA?utm_source=generator"
-    ),
-    new Cancion(
-        "5487454187",
-        "Beso",
-        "Rosalia",
-        "Urbano Latino",
-        "../assets/album/rr.jpg",
-        "3:14",
-        "Rosalia ft. Rauw Alejandro - Beso",
-        "https://open.spotify.com/embed/track/609E1JCInJncactoMmkDon?utm_source=generator"
-    ),
-    new Cancion(
-        "8795165184",
-        "Die for you",
-        "The Weeknd",
-        "Dance/Electrónica",
-        "../assets/album/starboy.jpg",
-        "4:20",
-        "The Weeknd - Die for you",
-        "https://open.spotify.com/embed/track/0SVfxv1GQdZjj0zkAKSE2h?utm_source=generator"
-    ),
-    new Cancion(
-        "8751321845",
-        "La triple T",
-        "Tini",
-        "Cumbia, Pop",
-        "../assets/album/cupido.jpeg",
-        "2:47",
-        "TINI - La Triple T",
-        "https://open.spotify.com/embed/track/7kYbxvrGXv8cmKjkqgqhrw?utm_source=generator"
-    ),
-    new Cancion(
-        "0541950216",
-        "Efecto",
-        "BadBunny",
-        "Urbano Latino",
-        "../assets/album/unveranosinti.jpg",
-        "3:33",
-        "Bad Bunny - Efecto",
-        "https://open.spotify.com/embed/track/5Eax0qFko2dh7Rl2lYs3bx?utm_source=generator"
-    ),
-];
 
 function verListaCanciones() {
     if (listaCanciones.length == 0) {
@@ -246,8 +163,6 @@ function verListaCanciones() {
             dataFila += "</tr>";
         }
         document.getElementById("dataCanciones").innerHTML = dataFila;
-    } else {
-        localStorage.setItem("listaCanciones", JSON.stringify(canciones));
     }
 }
 
